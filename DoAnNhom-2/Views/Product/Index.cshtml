@@ -1,0 +1,131 @@
+﻿@model IEnumerable<DoAnNhom_2.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<h1>Index</h1>
+<style>
+    .image-holder {
+        height: 250px;
+    }
+
+    .swiper.main-swiper {
+        background-color: white;
+    }
+
+    .product-card {
+        margin-bottom: 80px; /* Khoảng cách giữa các sản phẩm */
+
+        border-radius: 10px; /* Đặt độ cong cho khung */
+        background-color: white; /* Đặt màu nền cho phần */
+
+        box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+    }
+
+    
+    
+</style>
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-3">
+            @Html.Partial("_SidebarPartial")
+
+        </div>
+            <div class="col-md-9">
+                <!-- Product List -->
+                <div class="row border" style="border-radius: 10px; padding-right: 15px; padding-top: 15px;">
+                <section id="mobile-products" class="product-store position-relative padding-large no-padding-top">
+                    <div class="container">
+                        <div class="row">
+                            
+                            <div class="swiper product-swiper">
+                                <div class="swiper-wrapper">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="swiper-slide">
+                                            <div class="product-card position-relative">
+                                                <div class="image-holder">
+                                                    <a asp-action="Details" asp-controller="Product" asp-route-Id="@item.Id">
+                                                        <img src="~/media/products/@item.Image" alt="@item.Name" class="img-responsive" style="width: 100%; height: auto;" />
+                                                    </a>
+                                                </div>
+                                                <div class="card-detail d-flex flex-column align-items-center justify-content-center pt-3">
+                                                    <h3 class="card-title text-uppercase text-center mb-2">
+                                                        <a> @item.Name</a>
+                                                    </h3>
+                                                    <span>@item.Price.ToString("N0") VND</span>
+                                                </div>
+                                                <div class="cart-concern position-absolute">
+                                                    <div class="cart-button d-flex flex-column">
+                                                        <a href="#" class="btn btn-medium btn-black add-to-cart" data-product-id="@item.Id">Thêm vào giỏ hàng</a>
+
+
+                                                        <a asp-action="Details" asp-controller="Product" asp-route-Id="@item.Id" class="btn btn-medium btn-black">Chi tiết</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination position-absolute text-center"></div>
+                </section>
+
+            </div>
+            </div>
+        </div>
+    </div>
+<script>
+    $(document).ready(function () {
+        $('.add-to-cart').click(function (e) {
+            e.preventDefault();
+            var productId = $(this).data('product-id');
+            $.ajax({
+                url: '/Cart/Add',
+                type: 'POST',
+                data: { Id: productId },
+                success: function (response) {
+                    $('#notificationMessage').text(response.message);
+                    $('#notificationModal').modal('show');
+                },
+                error: function () {
+                    $('#notificationMessage').text('Đã xảy ra lỗi khi thêm sản phẩm vào giỏ hàng!');
+                    $('#notificationModal').modal('show');
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationModalLabel">Thông báo</h5>
+                <button type="button" class="close" aria-label="Close" onclick="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="notificationMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function closeModal() {
+        $('#notificationModal').modal('hide');
+    }
+</script>
+
+
+

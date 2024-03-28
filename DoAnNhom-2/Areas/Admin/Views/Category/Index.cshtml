@@ -1,0 +1,78 @@
+﻿@model IEnumerable<CategoryModel>
+@{
+    ViewData["title"] = "Danh muc san pham ";
+}
+<div style="height: 100px;"></div>
+<a asp-action="Create" class="btn btn-success btn-sm" asp-controller="Category">Thêm Sản Phẩm</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">danh muc</th>
+            <th scope="col">Chi Tiết danh muc</th>
+           
+            <th scope="col">Slug</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Slug</td>
+               
+                
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning btn-sm" asp-controller="Category" asp-route-Id="@item.Id">Sửa</a>
+                    <a id="deleteButton" class="btn btn-danger btn-sm" data-category-id="@item.Id">Xóa</a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+<div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thông báo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Không thể xóa danh mục vì còn sản phẩm trong danh mục này.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.btn-danger').click(function () {
+            var categoryId = $(this).data('category-id');
+            $.ajax({
+                url: '/Admin/Category/Delete/' + categoryId,
+                method: 'POST',
+                success: function (response) {
+                    if (response.error) {
+                        $('#deleteModal').modal('show');
+                    } else if (response.success) {
+                        // Redirect or do something else upon success
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+

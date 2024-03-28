@@ -1,0 +1,47 @@
+﻿@model BrandModel
+
+@{
+    ViewData["Title"] = "Chỉnh sửa thương hiệu";
+}
+
+<div style="height: 100px;"></div>
+<h4>Chỉnh sửa thương hiệu</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Status"></label>
+                    <select asp-for="Status" class="form-control">
+                        <option value="1">Hiển thị</option>
+                        <option value="0">Ẩn</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </form>
+            <a asp-action="Index">Quay lại danh sách thương hiệu</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

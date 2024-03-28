@@ -1,0 +1,134 @@
+﻿@model DoAnNhom_2.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="height: 100px;"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-12">
+                    <div id="lotus" class="picture" style="display: block;">
+                        <img class="img-fluid" src="~/media/products/@Model.Image" alt="@Model.Name">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>@Model.Name</h4>
+            <div>
+                <!-- Rating stars -->
+            </div>
+            <p>
+                <span>Tình trạng: </span>
+                <span class="text-success">@if (!Model.IsDeleted)
+                    {
+                        <text>Còn hàng</text>
+                    }
+                    else
+                    {
+                        <text>Hết hàng</text>
+                    }</span>
+            </p>
+            <ul class="text-muted">
+                <li><span>Thương hiệu: </span>@Model.Brand.Description</li>
+                <li><span>Dòng sản phẩm: </span>@Model.Category.Description</li>
+                <!-- Add more details as needed -->
+            </ul>
+            <div>
+                <span class="text-danger " style="font-size: 30px;">@Model.Price.ToString("N0") VND</span>
+                <!-- If there's a discounted price -->
+                <span class="pl-3" style="font-size: 18px; text-decoration: line-through;">@Model.OldPrice.ToString("N0") VND</span>
+            </div>
+            <a href="#" class="btn btn-medium btn-black add-to-cart" data-product-id="@Model.Id">Thêm vào giỏ hàng</a>
+            <div>
+                <div>Chia sẻ:</div>
+                <div>
+                    <div class="sharebuttons btn-group btn-group-justified">
+                        <!-- Add social media share buttons -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-md-5">
+        <div class="col-md-6 pt-3">
+            <h4 class="text-uppercase">Tính năng nổi bậc của sản phẩm</h4>
+            <ul>
+                <!-- Add product highlights -->
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <table class="table table-striped">
+                    <caption style="caption-side: top;">
+                        <h4 class="text-uppercase">Thông số kỹ thuật</h4>
+                    </caption>
+                    <tbody>
+                        <tr>
+                            <td>Loại bếp:</td>
+                            <td>Bếp từ đơn</td>
+                        </tr>
+                        <!-- Add more technical specifications -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.add-to-cart').click(function (e) {
+            e.preventDefault();
+            var productId = $(this).data('product-id');
+            $.ajax({
+                url: '/Cart/Add',
+                type: 'POST',
+                data: { Id: productId },
+                success: function (response) {
+                    $('#notificationMessage').text(response.message);
+                    $('#notificationModal').modal('show');
+                },
+                error: function () {
+                    $('#notificationMessage').text('Đã xảy ra lỗi khi thêm sản phẩm vào giỏ hàng!');
+                    $('#notificationModal').modal('show');
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationModalLabel">Thông báo</h5>
+                <button type="button" class="close" aria-label="Close" onclick="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="notificationMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()" >Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function closeModal() {
+        $('#notificationModal').modal('hide');
+    }
+</script>
+

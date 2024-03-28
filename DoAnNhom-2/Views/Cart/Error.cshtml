@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Payment Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <div class="error-message">
+                <h2>Thanh Toán Không Thành Công</h2>
+                <p class="lead">Rất tiếc, đã xảy ra lỗi khi xử lý khoản thanh toán của bạn, giá trị đơn hàng lớn hơn 100.000.000 VND.</p>
+                <p>Vui lòng thử lại sau hoặc liên hệ với bộ phận hỗ trợ khách hàng để được hỗ trợ.</p>
+                <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Quay về trang chủ</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .error-message {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .error-message h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .error-message p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .error-message .btn-primary {
+            margin-top: 20px;
+        }
+</style>

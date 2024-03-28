@@ -1,0 +1,86 @@
+﻿@model DoAnNhom_2.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="height: 100px;"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-12">
+                    <div id="lotus" class="picture" style="display: block;">
+                        <img class="img-fluid" src="~/media/products/@Model.Image" alt="@Model.Name">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>@Model.Name</h4>
+            <div>
+                <!-- Rating stars -->
+            </div>
+            <p>
+                <span>Tình trạng: </span>
+                <span class="text-success">@if (!Model.IsDeleted)
+                    {
+                        <text>Còn hàng</text>
+                    }
+                    else
+                    {
+                        <text>Hết hàng</text>
+                    }</span>
+            </p>
+            <ul class="text-muted">
+                <li><span>Thương hiệu: </span>@Model.Brand.Description</li>
+                <li><span>Dòng sản phẩm: </span>@Model.Category.Description</li>
+                <!-- Add more details as needed -->
+            </ul>
+            <div>
+                <span class="text-danger " style="font-size: 30px;">@Model.Price.ToString("N0") VND</span>
+                <!-- If there's a discounted price -->
+                <span class="pl-3" style="font-size: 18px; text-decoration: line-through;">1.330.000₫</span>
+            </div>
+            <button asp-action="Add" asp-controller="Cart" asp-route-Id="@Model.Id" type="button" class="btn btn-dark my-3 hvr-sweep-to-right waves-effect waves-light">Thêm vào giỏ hàng</button>
+            <div>
+                <div>Chia sẻ:</div>
+                <div>
+                    <div class="sharebuttons btn-group btn-group-justified">
+                        <!-- Add social media share buttons -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-md-5">
+        <div class="col-md-6 pt-3">
+            <h4 class="text-uppercase">Tính năng nổi bậc của sản phẩm</h4>
+            <ul>
+                <!-- Add product highlights -->
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <table class="table table-striped">
+                    <caption style="caption-side: top;">
+                        <h4 class="text-uppercase">Thông số kỹ thuật</h4>
+                    </caption>
+                    <tbody>
+                        <tr>
+                            <td>Loại bếp:</td>
+                            <td>Bếp từ đơn</td>
+                        </tr>
+                        <!-- Add more technical specifications -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+@Html.Partial("_FooterBottomPartial")

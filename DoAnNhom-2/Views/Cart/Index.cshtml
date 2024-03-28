@@ -1,0 +1,191 @@
+﻿
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="#">Products</a></li>
+                <li class="active">Shopping Cart</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<!-- Khoảng trắng -->
+<div style="height: 50px;"></div>
+@Html.Partial("_NotificationPartial")
+<section id="main_content">
+    <div class="container">
+        @if (Model.CartItems.Count > 0)
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CartItems)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="~/media/images/@item.ImageUrl" alt="@item.ProductName" width="100" />
+                                </td>
+                                <td>
+                                    <h4><a href="#">@item.ProductName</a></h4>
+                                </td>
+                                <td>@item.Price.ToString("N0") VND</td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" asp-controller="Cart" asp-action="Decrease" asp-route-id="@item.ProductId">-</a>
+                                        </span>
+                                        <input type="text" class="form-control" value="@item.Quantity" readonly>
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" asp-controller="Cart" asp-action="Increase" asp-route-id="@item.ProductId">+</a>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>@((item.Quantity * item.Price).ToString("N0")) VND</td>
+                                <td>
+                                    <a href="@Url.Action("Remove", "Cart", new { id = item.ProductId })" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                
+                    <a class="btn btn-danger" asp-controller="Cart" asp-action="Clear">Xóa Hết Sản Phẩm</a>
+                
+            </div>
+            <div style="height: 50px;"></div>
+            <div class="row bg-white rounded p-4 py-5 shadow-sm border border-dark">
+                <div class="col-md-6">
+                    <div class="text-uppercase font-weight-bold bg-light rounded-pill px-md-4 py-md-3">
+                        Thông tin nhận hàng
+                    </div>
+                    <form action="" class="p-md-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="txtHoTen" placeholder="Họ tên">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" id="txtSDT" placeholder="Số điện thoại">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="diachi" id="txtDiaChi" cols="30" rows="2" class="form-control"
+                                      placeholder="Địa chỉ"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="ghichu" id="txtGhiChu" cols="30" rows="3" class="form-control"
+                                      placeholder="Ghi chú cho người bán"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check p-0">
+                                <div class="form-check">
+                                    <label for="cod" class="form-check-label">
+                                        <input type="radio" name="thanhtoan" id="cod"
+                                               class="form-check-input">COD
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label for="chuyenkhoan" class="form-check-label">
+                                        <input type="radio" name="thanhtoan" id="chuyenkhoan"
+                                               class="form-check-input" checked>Chuyển khoản
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class"text-uppercase font-weight-bold bg-light rounded-pill px-md-4 py-md-3">
+                        Chi tiết thanh toán
+                    </div>
+                    <div class="p-md-4">
+                        <form action="" class="py-md-4 row d-flex">
+                            <div class="col-md-7 d-flex flex-column justify-content-center">
+                                <input type="text"
+                                       id="txtGiamGia" class="form-control" placeholder="Nhập mã giảm giá">
+                            </div>
+                            <button type="button" class="btn btn-dark col-md-3 p-md-2 rounded-pill">
+                                <i class="fa fa-gift"></i> Áp dụng
+                            </button>
+                        </form>
+                        <p class="font-italic mb-4">Liên hệ nhân viên trước khi chuyển tiền mua hàng</p>
+                        <ul class="list-unstyled">
+                            <li class="d-flex justify-content-between border-bottom py-3">
+                                <strong class="text-muted">Tổng</strong>
+                                <strong>@Model.GrandTotal.ToString("N0")đ</strong>
+                            </li>
+                            <li class="d-flex justify-content-between border-bottom py-3">
+                                <strong class="text-muted">Phí vận chuyển</strong>
+                                <strong>0đ</strong>
+                            </li>
+                            <li class="d-flex justify-content-between border-bottom py-3">
+                                <strong class="text-muted">Giảm giá</strong>
+                                <strong>0đ</strong>
+                            </li>
+                            <li class="d-flex justify-content-between border-bottom py-3">
+                                <strong class="text-muted">Thành Tiền</strong>
+                                <strong>@Model.GrandTotal.ToString("N0")đ</strong>
+                            </li>
+                        </ul>
+
+                        @using Microsoft.AspNetCore.Identity
+                        @inject SignInManager<IdentityUser> SignInManager
+                        @inject UserManager<IdentityUser> UserManager
+
+
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <form id="orderForm" method="post" action="@Url.Action("Payment", "Cart")">
+                                <button type="submit" class="btn btn-dark rounded-pill btn-block py-2" id="btnDatHang">Đặt hàng Qua MOMO</button>
+                                <button type="submit" class="btn btn-dark rounded-pill btn-block py-2" asp-controller="Checkout" asp-action="Checkout">Thanh toan</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <form class="nav-link text-white" asp-area="Identity" asp-page="/Account/Login">
+                                <button type="submit" class="btn btn-dark rounded-pill btn-block py-2" id="btnDatHang">Đăng nhập để đặt hàng</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <div class="empty-cart">
+                            <img src="empty_cart_image.png" alt="Empty Cart" class="img-fluid mb-4">
+                            <h2 class="mb-3">Giỏ Hàng Của Bạn Trống Nè?</h2>
+                            <p class="text-muted">Có vẻ như bạn chưa ưng ý món nào phải không.</p>
+                         
+                            <a asp-controller="Product" asp-action="Index" class="btn btn-primary">Vào đây xem thử</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Khoảng trắng -->
+<div style="height: 150px;"></div>
+
+<script>
+    document.getElementById("btnDatHang").addEventListener("click", function () {
+        document.getElementById("orderForm").submit();
+    });
+
+</script>
+
+@Html.Partial("_FooterBottomPartial")

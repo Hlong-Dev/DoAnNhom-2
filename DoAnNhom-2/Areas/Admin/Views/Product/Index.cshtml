@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProductModel>
+@{
+    ViewData["Title"] = "Danh Sách Sản Phẩm";
+}
+
+<div style="height: 100px;"></div>
+<a asp-action="Create" class="btn btn-success btn-sm" asp-controller="Product">Thêm Sản Phẩm</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Sản Phẩm</th>
+            <th scope="col">Chi Tiết Sản Phẩm</th>
+            <th scope="col">Giá Mới</th>
+            <th scope="col">Giá Cũ</th>
+            <th scope="col">Hình Ảnh</th>
+            <th scope="col">Loại</th>
+            <th scope="col">Thương Hiệu</th>
+            <th scope="col">Slug</th>
+            <th scope="col">Hành Động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Name</td>
+                <td>@Html.Raw(@item.Description)</td>
+                <td>@item.Price</td>
+                <td>@item.OldPrice</td> <!-- Hiển thị giá cũ -->
+                <td><img src="~/media/products/@item.Image" width="50"></td>
+                <td>@item.Category.Name</td>
+                <td>@item.Brand.Name</td>
+                <td>@item.Slug</td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning btn-sm" asp-controller="Product" asp-route-Id="@item.Id">Sửa</a>
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-controller="Product" asp-route-Id="@item.Id">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

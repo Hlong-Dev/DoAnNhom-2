@@ -1,0 +1,725 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DoAnNhom-2.bundle.scp.css",
+      "PackagePath": "staticwebassets\\DoAnNhom-2.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\BackendAdmin\\js\\site.js",
+      "PackagePath": "staticwebassets\\BackendAdmin\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\css\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\css\\ajax-loader.gif"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\css\\vendor.css",
+      "PackagePath": "staticwebassets\\css\\vendor.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\banner-image.png",
+      "PackagePath": "staticwebassets\\images\\banner-image.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\cart-item1.jpg",
+      "PackagePath": "staticwebassets\\images\\cart-item1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\cart-item2.jpg",
+      "PackagePath": "staticwebassets\\images\\cart-item2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\commentor-item1.jpg",
+      "PackagePath": "staticwebassets\\images\\commentor-item1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\commentor-item2.jpg",
+      "PackagePath": "staticwebassets\\images\\commentor-item2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\commentor-item3.jpg",
+      "PackagePath": "staticwebassets\\images\\commentor-item3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\dhl.png",
+      "PackagePath": "staticwebassets\\images\\dhl.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\insta-item1.jpg",
+      "PackagePath": "staticwebassets\\images\\insta-item1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\insta-item2.jpg",
+      "PackagePath": "staticwebassets\\images\\insta-item2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\insta-item3.jpg",
+      "PackagePath": "staticwebassets\\images\\insta-item3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\insta-item4.jpg",
+      "PackagePath": "staticwebassets\\images\\insta-item4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\insta-item5.jpg",
+      "PackagePath": "staticwebassets\\images\\insta-item5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\logotv.png",
+      "PackagePath": "staticwebassets\\images\\logotv.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\main-logo.png",
+      "PackagePath": "staticwebassets\\images\\main-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\mastercard.jpg",
+      "PackagePath": "staticwebassets\\images\\mastercard.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\paypal.jpg",
+      "PackagePath": "staticwebassets\\images\\paypal.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-image.jpg",
+      "PackagePath": "staticwebassets\\images\\post-image.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-image1.jpg",
+      "PackagePath": "staticwebassets\\images\\post-image1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-item1.jpg",
+      "PackagePath": "staticwebassets\\images\\post-item1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-item2.jpg",
+      "PackagePath": "staticwebassets\\images\\post-item2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-item3.jpg",
+      "PackagePath": "staticwebassets\\images\\post-item3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-item4.jpg",
+      "PackagePath": "staticwebassets\\images\\post-item4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-item5.jpg",
+      "PackagePath": "staticwebassets\\images\\post-item5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-item6.jpg",
+      "PackagePath": "staticwebassets\\images\\post-item6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-item7.jpg",
+      "PackagePath": "staticwebassets\\images\\post-item7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-item8.jpg",
+      "PackagePath": "staticwebassets\\images\\post-item8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-item9.jpg",
+      "PackagePath": "staticwebassets\\images\\post-item9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-small-image1.jpg",
+      "PackagePath": "staticwebassets\\images\\post-small-image1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-small-image2.jpg",
+      "PackagePath": "staticwebassets\\images\\post-small-image2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\post-small-image3.jpg",
+      "PackagePath": "staticwebassets\\images\\post-small-image3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\product-item1.jpg",
+      "PackagePath": "staticwebassets\\images\\product-item1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\product-item10.jpg",
+      "PackagePath": "staticwebassets\\images\\product-item10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\product-item2.jpg",
+      "PackagePath": "staticwebassets\\images\\product-item2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\product-item3.jpg",
+      "PackagePath": "staticwebassets\\images\\product-item3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\product-item4.jpg",
+      "PackagePath": "staticwebassets\\images\\product-item4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\product-item5.jpg",
+      "PackagePath": "staticwebassets\\images\\product-item5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\product-item6.jpg",
+      "PackagePath": "staticwebassets\\images\\product-item6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\product-item7.jpg",
+      "PackagePath": "staticwebassets\\images\\product-item7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\product-item8.jpg",
+      "PackagePath": "staticwebassets\\images\\product-item8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\product-item9.jpg",
+      "PackagePath": "staticwebassets\\images\\product-item9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\review-item1.jpg",
+      "PackagePath": "staticwebassets\\images\\review-item1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\review-item2.jpg",
+      "PackagePath": "staticwebassets\\images\\review-item2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\search-icon.png",
+      "PackagePath": "staticwebassets\\images\\search-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\shippingcard.png",
+      "PackagePath": "staticwebassets\\images\\shippingcard.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\singel-product-item.jpg",
+      "PackagePath": "staticwebassets\\images\\singel-product-item.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\single-image1.png",
+      "PackagePath": "staticwebassets\\images\\single-image1.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\single-image2.jpg",
+      "PackagePath": "staticwebassets\\images\\single-image2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\single-image3.jpg",
+      "PackagePath": "staticwebassets\\images\\single-image3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\single-post.jpg",
+      "PackagePath": "staticwebassets\\images\\single-post.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv1.jpg",
+      "PackagePath": "staticwebassets\\images\\tv1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv10.png",
+      "PackagePath": "staticwebassets\\images\\tv10.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv11.png",
+      "PackagePath": "staticwebassets\\images\\tv11.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv12.png",
+      "PackagePath": "staticwebassets\\images\\tv12.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv13.png",
+      "PackagePath": "staticwebassets\\images\\tv13.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv2.jpg",
+      "PackagePath": "staticwebassets\\images\\tv2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv20.png",
+      "PackagePath": "staticwebassets\\images\\tv20.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv21.jpg",
+      "PackagePath": "staticwebassets\\images\\tv21.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv22.jpg",
+      "PackagePath": "staticwebassets\\images\\tv22.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv3.jpg",
+      "PackagePath": "staticwebassets\\images\\tv3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv4.jpg",
+      "PackagePath": "staticwebassets\\images\\tv4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv5.png",
+      "PackagePath": "staticwebassets\\images\\tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv6.png",
+      "PackagePath": "staticwebassets\\images\\tv6.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv8.png",
+      "PackagePath": "staticwebassets\\images\\tv8.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\tv9.png",
+      "PackagePath": "staticwebassets\\images\\tv9.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\images\\visa.jpg",
+      "PackagePath": "staticwebassets\\images\\visa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\js\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\js\\ajax-loader.gif"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\js\\jquery-1.11.0.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-1.11.0.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\js\\modernizr.js",
+      "PackagePath": "staticwebassets\\js\\modernizr.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\js\\plugins.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\0d515a06-1d88-42c3-a6ac-71dbcf5fe049_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\0d515a06-1d88-42c3-a6ac-71dbcf5fe049_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\10fbd3de-05e2-4e8f-b4dc-5b7c9e5e9257_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\10fbd3de-05e2-4e8f-b4dc-5b7c9e5e9257_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\1f758d96-0082-43b7-98e2-ad4a02c934b7_tv4.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\1f758d96-0082-43b7-98e2-ad4a02c934b7_tv4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\210e2fea-d47f-44f5-b844-5a3282a911b6_tv9.png",
+      "PackagePath": "staticwebassets\\media\\products\\210e2fea-d47f-44f5-b844-5a3282a911b6_tv9.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\3120fba2-3e6a-475f-a134-15f599fbd722_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\3120fba2-3e6a-475f-a134-15f599fbd722_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\3907b6f7-aee1-49c6-a8d9-870c08b2be36_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\3907b6f7-aee1-49c6-a8d9-870c08b2be36_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\39455f04-eaf8-4c20-94de-54fc982dcc74_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\39455f04-eaf8-4c20-94de-54fc982dcc74_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\4532a8f2-40d6-46ea-9198-81b056d6fca9_tv12.png",
+      "PackagePath": "staticwebassets\\media\\products\\4532a8f2-40d6-46ea-9198-81b056d6fca9_tv12.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\580f96e2-55e0-4ef8-9668-bdb3ef2ed8ff_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\580f96e2-55e0-4ef8-9668-bdb3ef2ed8ff_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\58fd51c8-67b4-430e-88e6-a5074aa3f800_tv12.png",
+      "PackagePath": "staticwebassets\\media\\products\\58fd51c8-67b4-430e-88e6-a5074aa3f800_tv12.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\5e848da3-59e4-4b4c-b986-835df8885ed4_tv12.png",
+      "PackagePath": "staticwebassets\\media\\products\\5e848da3-59e4-4b4c-b986-835df8885ed4_tv12.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\5fa872b2-e8c7-4926-915a-4985d86c6218_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\5fa872b2-e8c7-4926-915a-4985d86c6218_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\68d3edc6-4ef1-4d58-ac76-6be2a9e97e77_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\68d3edc6-4ef1-4d58-ac76-6be2a9e97e77_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\69b6e9b4-6ef1-4b87-9cef-d435f43cbdf4_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\69b6e9b4-6ef1-4b87-9cef-d435f43cbdf4_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\6df7b665-3777-4c2d-88eb-83b2587a0017_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\6df7b665-3777-4c2d-88eb-83b2587a0017_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\6f165626-d5b2-4815-b147-30c26a5b19cc_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\6f165626-d5b2-4815-b147-30c26a5b19cc_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\7501666c-8f86-4b3b-811d-ce53ba0e764d_tv9.png",
+      "PackagePath": "staticwebassets\\media\\products\\7501666c-8f86-4b3b-811d-ce53ba0e764d_tv9.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\754eeb3d-1295-4dc6-8693-c350180d6325_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\754eeb3d-1295-4dc6-8693-c350180d6325_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\767ba76d-c0ce-47b7-a4fc-86fae4b0e894_tv12.png",
+      "PackagePath": "staticwebassets\\media\\products\\767ba76d-c0ce-47b7-a4fc-86fae4b0e894_tv12.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\7af6838e-de29-42f5-a9ba-716d2feab451_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\7af6838e-de29-42f5-a9ba-716d2feab451_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\8ab539e4-c9eb-487b-a234-669fcf0be1ba_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\8ab539e4-c9eb-487b-a234-669fcf0be1ba_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\8b8e3ace-9f4f-4fe8-924b-42fb9a06c4f5_tv11.png",
+      "PackagePath": "staticwebassets\\media\\products\\8b8e3ace-9f4f-4fe8-924b-42fb9a06c4f5_tv11.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\8c09f651-7f40-4683-a0f0-814a00a33aaf_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\8c09f651-7f40-4683-a0f0-814a00a33aaf_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\8c50be15-a725-4a1f-916b-b474ccc988c3_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\8c50be15-a725-4a1f-916b-b474ccc988c3_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\8cf05a19-7b50-428e-bd5f-46c68faf1aa5_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\8cf05a19-7b50-428e-bd5f-46c68faf1aa5_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\952d7698-7ced-4f5e-8def-e9e7a3116b1e_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\952d7698-7ced-4f5e-8def-e9e7a3116b1e_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\9c356e1f-a79e-4393-8800-6e448a6fe18a_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\9c356e1f-a79e-4393-8800-6e448a6fe18a_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\b24f427a-74a6-4f3f-a391-4a6c6c854b76_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\b24f427a-74a6-4f3f-a391-4a6c6c854b76_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\b449c6f0-b591-4130-aba6-3624f7861866_tv11.png",
+      "PackagePath": "staticwebassets\\media\\products\\b449c6f0-b591-4130-aba6-3624f7861866_tv11.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\ba151c69-8bbc-4cbc-b193-f073235060c5_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\ba151c69-8bbc-4cbc-b193-f073235060c5_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\c1cbd47c-3e6e-4521-94b4-62a74258cac8_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\c1cbd47c-3e6e-4521-94b4-62a74258cac8_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\c9f5c1d6-e59c-4605-8c29-1289f4f94df2_tv9.png",
+      "PackagePath": "staticwebassets\\media\\products\\c9f5c1d6-e59c-4605-8c29-1289f4f94df2_tv9.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\d4e988f7-62ab-43ba-b737-7ded32ff3fb1_tv10.png",
+      "PackagePath": "staticwebassets\\media\\products\\d4e988f7-62ab-43ba-b737-7ded32ff3fb1_tv10.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\e7d3f16f-d910-4762-b010-6db4c515c4d1_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\e7d3f16f-d910-4762-b010-6db4c515c4d1_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\e89cc836-1278-4def-b580-f134c884cffb_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\e89cc836-1278-4def-b580-f134c884cffb_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\e9218817-c6c3-4343-8b61-5b28606678eb_tv10.png",
+      "PackagePath": "staticwebassets\\media\\products\\e9218817-c6c3-4343-8b61-5b28606678eb_tv10.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\ee94261a-34d7-4441-a8c8-dabe60686484_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\ee94261a-34d7-4441-a8c8-dabe60686484_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\efa2874a-7ea2-4875-954f-de9583bfae7d_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\efa2874a-7ea2-4875-954f-de9583bfae7d_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\fa79156b-23c1-46cb-a3b8-475108979999_tv5.png",
+      "PackagePath": "staticwebassets\\media\\products\\fa79156b-23c1-46cb-a3b8-475108979999_tv5.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\style.css",
+      "PackagePath": "staticwebassets\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.DoAnNhom-2.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.DoAnNhom-2.props",
+      "PackagePath": "build\\DoAnNhom-2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.DoAnNhom-2.props",
+      "PackagePath": "buildMultiTargeting\\DoAnNhom-2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.DoAnNhom-2.props",
+      "PackagePath": "buildTransitive\\DoAnNhom-2.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

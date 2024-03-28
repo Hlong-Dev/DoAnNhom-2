@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Don Hang";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Order code</th>
+            <th scope="col">UserName</th>
+
+            <th scope="col">Order Date</th>
+            <th scope="col">Order Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Ordercode</th>
+                <td>@item.UserName</td>
+                <td>@item.CreatedDate</td>
+                
+                <td>
+                    @if (item.Status == 1)
+                    {
+                        <span> class="text text-success">don hang moi</span>
+                    }
+                    else
+                    {
+                        <span> class="text text-danger">Don hang thanh cong</span>
+
+                    }
+
+                </td>
+
+
+                <td>
+                    <a asp-action="View" class="btn btn-warning btn-sm" asp-controller="Order" asp-route-Id="@item.Ordercode">Sửa</a>
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-controller="Category" asp-route-Id="@item.Id">Xóa</a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
