@@ -4,6 +4,7 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <div style="height: 100px;"></div>
 <div class="container">
     <div class="row">
@@ -23,26 +24,33 @@
             </div>
             <p>
                 <span>Tình trạng: </span>
-                <span class="text-success">@if (!Model.IsDeleted)
+                <span class="text-success">
+                    @if (Model.Quantity > 0)
                     {
-                        <text>Còn hàng</text>
+                        <text>Còn Hàng</text>
                     }
                     else
                     {
-                        <text>Hết hàng</text>
-                    }</span>
+                        <text>Đã Hết Hàng</text>
+                    }
+                </span>
             </p>
             <ul class="text-muted">
                 <li><span>Thương hiệu: </span>@Model.Brand.Description</li>
                 <li><span>Dòng sản phẩm: </span>@Model.Category.Description</li>
+                <li><span>Kích thước: </span>@Model.Size</li>
                 <!-- Add more details as needed -->
             </ul>
             <div>
                 <span class="text-danger " style="font-size: 30px;">@Model.Price.ToString("N0") VND</span>
                 <!-- If there's a discounted price -->
+                @if (Model.OldPrice > 0)
+                                        {
                 <span class="pl-3" style="font-size: 18px; text-decoration: line-through;">@Model.OldPrice.ToString("N0") VND</span>
+                                        }
             </div>
-            <a href="#" class="btn btn-medium btn-black add-to-cart" data-product-id="@Model.Id">Thêm vào giỏ hàng</a>
+
+            <a href="#" class="btn btn-medium btn-black add-to-cart" data-product-id="@Model.Id">Thêm vào giỏ hàng</a><!-- Sử dụng data-product-slug thay vì data-product-id -->
             <div>
                 <div>Chia sẻ:</div>
                 <div>
@@ -79,16 +87,20 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
 <script>
     $(document).ready(function () {
         $('.add-to-cart').click(function (e) {
             e.preventDefault();
             var productId = $(this).data('product-id');
+
+            // Kiểm tra số lượng sản phẩm trước khi thêm vào giỏ hàng
+            if (parseInt("@Model.Quantity") <= 0) {
+                alert('Sản phẩm đã hết hàng.');
+                return;
+            }
+
             $.ajax({
                 url: '/Cart/Add',
                 type: 'POST',
@@ -120,7 +132,7 @@
                 <p id="notificationMessage"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()" >Đóng</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Đóng</button>
             </div>
         </div>
     </div>
@@ -131,4 +143,5 @@
         $('#notificationModal').modal('hide');
     }
 </script>
+
 

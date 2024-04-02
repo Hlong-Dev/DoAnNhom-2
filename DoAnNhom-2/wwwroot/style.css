@@ -73,11 +73,12 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: var(--body-font);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.6;
-  margin: 0;
+    font-family: 'SF Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f5f5f7;
 }
 p {
   font-size: 1.2em;

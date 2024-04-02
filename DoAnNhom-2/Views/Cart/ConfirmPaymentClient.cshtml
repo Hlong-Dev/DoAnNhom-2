@@ -1,48 +1,18 @@
-﻿@{
-    ViewBag.Title = "Confirm Payment";
-    Layout = "~/Views/Shared/_Layout.cshtml"; // Đảm bảo sử dụng layout chung nếu bạn có
-}
+﻿<div style="height: 50px;"></div>
+@Html.Partial("_NotificationPartial")
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3 text-center">
-            <div class="confirmation-message">
-                <h2>Thanh Toán Đơn Hàng Qua MoMo Thành Công</h2>
-              
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="empty-cart">
+                <img src="/images/tv39.png" alt="Empty Cart" class="img-fluid mb-4">
+                <h2 class="mb-3">Thanh Toán Đơn Hàng Qua Thành Công</h2>
                 <p class="thank-you">Cám Ơn Bạn Đã Mua Hàng!</p>
-                <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Tiếp Tục Mua Sắm</a>
+
+                <a asp-controller="Product" asp-action="Index" class="btn btn-primary">Tiếp Tục Mua Sắm</a>
             </div>
         </div>
     </div>
 </div>
 
-<style>
-    .confirmation-message {
-        background-color: #f9f9f9;
-        padding: 30px;
-        border-radius: 5px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
 
-        .confirmation-message h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .confirmation-message p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .confirmation-message .thank-you {
-            font-weight: bold;
-            color: #32CD32;
-        }
-
-        .confirmation-message .btn-primary {
-            margin-top: 20px;
-        }
-</style>
-@Html.Partial("_FooterBottomPartial")

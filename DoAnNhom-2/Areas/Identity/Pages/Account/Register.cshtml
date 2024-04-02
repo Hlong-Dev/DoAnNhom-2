@@ -13,6 +13,11 @@
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3">
+                <label for="username" class="form-label">Tên Tài Khoản</label>
+                <input type="username" class="form-control" id="username" asp-for="Input.UserName" aria-describedby="emailHelp" autocomplete="username" required>
+                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email" asp-for="Input.Email" aria-describedby="emailHelp" autocomplete="username" required>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>

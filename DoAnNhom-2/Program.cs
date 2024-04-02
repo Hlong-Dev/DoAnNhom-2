@@ -1,7 +1,10 @@
-using DoAnNhom_2.Data;
+﻿using DoAnNhom_2.Data;
 using DoAnNhom_2.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -20,9 +23,16 @@ builder.Services.AddAuthentication().AddGoogle(googleOptions =>
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
+builder.Services.AddScoped<IDiscountCodeRepository, DiscountCodeRepository>();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(6); // Thời gian khóa mặc định là 5 phút
+    options.Lockout.MaxFailedAccessAttempts = 5; // Số lần đăng nhập thất bại tối đa trước khi khóa tài khoản
+});
 
 //builder.Services.AddSingleton<INavigationService,NavigationService>();
 builder.Services.AddControllersWithViews();
@@ -51,6 +61,19 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "Areas",
     pattern: "{area:exists}/{controller=Product}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "category",
+    pattern: "category/{Slug?}",
+    defaults: new { controller = "Category", action = "Index" });
+app.MapControllerRoute(
+    name: "brand",
+    pattern: "brand/{Slug?}",
+    defaults: new { controller = "Brand", action = "Index" });
+app.MapControllerRoute(
+    name: "Details",
+    pattern: "Details/{slug?}",
+    defaults: new { controller = "Product", action = "Details" });
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
