@@ -37,6 +37,10 @@ namespace DoAnNhom_2.Models
         [NotMapped]
         [FileExtension]
         public IFormFile ImageUpload  { get; set; }
+        public int Quantity { get; set; }
+
+  
+        public string Size { get; set; }
     }
    
 }

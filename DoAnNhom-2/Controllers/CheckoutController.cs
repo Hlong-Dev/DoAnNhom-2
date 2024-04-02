@@ -1,52 +1,87 @@
 ﻿using DoAnNhom_2.Data;
 using DoAnNhom_2.Models;
 using DoAnNhom_2.Repository;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DoAnNhom_2.Controllers
 {
     public class CheckoutController : Controller
     {
         private readonly ApplicationDbContext _datacontext;
-        public CheckoutController(ApplicationDbContext context)
+        private readonly UserManager<IdentityUser> _userManager;
+
+        public CheckoutController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
-              _datacontext = context;
+            _datacontext = context;
+            _userManager = userManager;
         }
-        public async Task<IActionResult> Checkout()
+
+        public async Task<IActionResult> Checkout(string fullName, string phoneNumber, string address, string note)
         {
-            var userEmail = User.FindFirstValue(ClaimTypes.Email);
-            if (userEmail == null)
+            // Lấy thông tin người dùng từ Identity
+            IdentityUser user = await _userManager.GetUserAsync(User);
+
+            if (user == null)
             {
-                return RedirectToAction("Login", "Account");
+                // Nếu người dùng không đăng nhập, chuyển hướng đến trang đăng nhập
+                return RedirectToAction("Login", "Account", new { area = "Identity" });
             }
             else
             {
-                var ordercode = Guid.NewGuid().ToString();
-                var orderItem = new OrderModel();
-                orderItem.Ordercode = ordercode;
-                orderItem.UserName = userEmail;
-                orderItem.Status = 1;
-                orderItem.CreatedDate = DateTime.Now;
-                _datacontext.Add(orderItem);
-                await _datacontext.SaveChangesAsync(); // Sử dụng SaveChangesAsync và await
-                List<CartItemModel> cartitems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
-                foreach (var cart in cartitems)
+
+                // Tạo mã đơn hàng
+                var orderCode = Guid.NewGuid().ToString();
+                var orderItem = new OrderModel
                 {
-                    var orderdetails = new OrderDetails();
-                    orderdetails.UserName = userEmail;
-                    orderdetails.OrderCode = ordercode;
-                    orderdetails.ProductId = cart.ProductId;
-                    orderdetails.Price = cart.Price;
-                    orderdetails.Quantity = cart.Quantity;
-                    _datacontext.Add(orderdetails); // Thêm orderdetails vào context
-                    await _datacontext.SaveChangesAsync(); // Sử dụng SaveChangesAsync và await
-                }
+                    Ordercode = orderCode,
+                    UserName = user.UserName,
+       
+                    Status = 1, // Giả sử status 1 là đơn hàng mới
+                    CreatedDate = DateTime.Now
+                };
+
+                // Thêm đơn hàng vào database
+                _datacontext.Add(orderItem);
+                await _datacontext.SaveChangesAsync();
+
+                // Lấy thông tin giỏ hàng từ Session
+                List<CartItemModel> cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
+
+                // Tính tổng số lượng và tổng giá tiền của tất cả các mục OrderDetails
+                int totalQuantity = cartItems.Sum(od => od.Quantity);
+                decimal totalPrice = cartItems.Sum(od => od.Price * od.Quantity);
+
+                // Tạo một mục OrderDetails mới đại diện cho tổng của cả hai đơn hàng
+                var totalOrderDetails = new OrderDetails
+                {
+                    OrderCode = orderCode,
+                    ProductId = cartItems.Count, // Sử dụng một ID duy nhất để đại diện cho tổng của cả hai đơn hàng
+                    Price = totalPrice,
+                    Quantity = totalQuantity,
+                    PhoneNumber = phoneNumber, // Sử dụng số điện thoại từ form
+                    UserName = user.UserName,
+                    Address = address, // Sử dụng địa chỉ từ form
+                    FullName = fullName, // Sử dụng họ tên từ form
+                                         // Sử dụng ghi chú từ form
+                };
+
+                // Thêm mục OrderDetails đại diện cho tổng vào database
+                _datacontext.Add(totalOrderDetails);
+
+                // Xóa thông tin giỏ hàng từ Session
                 HttpContext.Session.Remove("Cart");
-                TempData["success"] = "Checkout thanh cong";
+
+                // Lưu các thay đổi vào database
+                await _datacontext.SaveChangesAsync();
+
+                // Chuyển hướng đến trang xác nhận thanh toán
                 return RedirectToAction("ConfirmPaymentClient", "Cart");
             }
-            // Không cần return View() ở đây vì trong trường hợp email không hợp lệ, chúng ta đã thực hiện redirect.
         }
     }
 }

@@ -78,11 +78,11 @@
                 <div class="card-body">
                     <form id="local-account" method="post">
                         <div class="mb-3">
-                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="Email">
-                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="Tên đăng nhập">
+                            <span asp-validation-for="Input.UserName" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <input asp-for="Input.Password" type="password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Password">
+                            <input asp-for="Input.Password" type="password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Mật khẩu">
                             <span asp-validation-for="Input.Password" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-check">

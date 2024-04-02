@@ -16,6 +16,9 @@ namespace DoAnNhom_2.Data
         public DbSet<CategoryModel> Categories { get; set; }
         public DbSet<OrderModel> Orders { get; set; }
         public DbSet<OrderDetails> OrderDetails { get; set; }
+        public DbSet<MoMoPayment> MoMoPayments { get; set; }
+        public DbSet<Result> Results { get; set; }
+        public DbSet<DiscountCodeModel> DiscountCodes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

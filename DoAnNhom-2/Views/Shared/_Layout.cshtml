@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>MetaCredit</title>
+    <title>TEAM2 - Apple Authorised reseller</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="~https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/pngegg.png">
     <!-- script
     ================================================== -->
     <script src="~/js/modernizr.js"></script>
@@ -103,88 +104,55 @@
         </symbol>
     </svg>
 
-    <div class="search-popup">
+    <div class="search-popup" style="display: none;">
         <div class="search-popup-container">
-            <form role="search" method="post" class="search-form" asp-controller="Product" asp-action="Search">
-               
-                    <input type="search" id="search-form" class="search-field form-control" placeholder="Type and press enter" value="" name="searchTerm" />
-                    <button type="submit" class="search-submit">
-                        <svg class="search"><use xlink:href="#search"></use></svg>
-                    </button>
-            
+            <form role="search" method="post" class="search-form" asp-area="" asp-controller="Product" asp-action="Search">
+
+                <input type="search" id="search-form" class="search-field form-control" placeholder="Type and press enter" value="" name="searchTerm" autocomplete="off" />
+                <div id="autocomplete-results"></div>
+
+                <button type="submit" class="search-submit">
+                    <svg class="search"><use xlink:href="#search"></use></svg>
+                </button>
+
             </form>
-
-
-            <h5 class="cat-list-title">Browse Categories</h5>
-
-            <ul class="cat-list">
-                <li class="cat-list-item">
-                    <a href="#" title="Mobile Phones">Mobile Phones</a>
-                </li>
-                <li class="cat-list-item">
-                    <a href="#" title="Smart Watches">Smart Watches</a>
-                </li>
-                <li class="cat-list-item">
-                    <a href="#" title="Headphones">Headphones</a>
-                </li>
-                <li class="cat-list-item">
-                    <a href="#" title="Accessories">Accessories</a>
-                </li>
-                <li class="cat-list-item">
-                    <a href="#" title="Monitors">Monitors</a>
-                </li>
-                <li class="cat-list-item">
-                    <a href="#" title="Speakers">Speakers</a>
-                </li>
-                <li class="cat-list-item">
-                    <a href="#" title="Memory Cards">Memory Cards</a>
-                </li>
-            </ul>
-
+            
         </div>
     </div>
 
-    <header id="header" class="site-header header-scrolled position-fixed text-white bg-dark">
+    <header id="header" class="site-header header-scrolled position-fixed text-black bg-white">
         <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                    <img src="images/tv13.png" class="logo">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/pngwing.com.png" class="logo">
                 </a>
-                
+
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
-                    <div class="offcanvas-header px-4 pb-0">
-                        <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                            <img src="images/tv13.png" class="logo">
-                        </a>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdNavbar"></button>
-                    </div>
                     <div class="offcanvas-body">
                         <ul id="navbar" class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a asp-controller="Home" asp-action="Index" class="nav-link me-4">Trang Chủ</a>
+                                <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link me-4">Trang Chủ</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link me-4" href="#company-services">Services</a>
                             </li>
                             <li class="nav-item dropdown" onmouseover="showDropdown()" onmouseout="hideDropdown()">
-                                <a asp-controller="Product" asp-action="Index" class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">Sản Phẩm</a>
+                                <a asp-area="" asp-controller="Product" asp-action="Index" class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">Sản Phẩm</a>
                                 <ul class="dropdown-menu" id="productDropdown">
                                     <li>
-                                        <a asp-controller="Cart" asp-action="Index" class="dropdown-item">Tivi Cũ</a>
+                                        <a asp-area="" asp-controller="Product" asp-action="Index" class="dropdown-item">Tivi Cũ</a>
                                     </li>
                                     <li>
-                                        <a href="checkout.html" class="dropdown-item">Tivi Mới</a>
+                                        <a href="https://localhost:7261/category/Apple-TV-4K" class="dropdown-item">Tivi Mới</a>
                                     </li>
                                 </ul>
                             </li>
-                            
                             <li class="nav-item">
                                 <a class="nav-link me-4" href="#smart-watches">Watches</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link me-4" href="#yearly-sale">Sale</a>
                             </li>
-                          
                             <li class="nav-item dropdown">
                                 <a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu">
@@ -198,7 +166,7 @@
                                         <a href="shop.html" class="dropdown-item">Shop</a>
                                     </li>
                                     <li>
-                                        <a asp-controller="Cart" asp-action="Index" class="dropdown-item">Cart</a>
+                                        <a asp-area="" asp-controller="Cart" asp-action="Index" class="dropdown-item">Giỏ Hàng</a>
                                     </li>
                                     <li>
                                         <a href="checkout.html" class="dropdown-item">Checkout</a>
@@ -216,38 +184,90 @@
                             </li>
                             <li class="nav-item">
                                 <div class="user-items ps-5">
-                                    <ul class="d-flex justify-content-end list-unstyled">
+                                    <ul class="d-flex justify-content-end align-items-center list-unstyled">
                                         <li class="search-item pe-3">
                                             <a href="#" class="search-button">
-                                                <svg class="search" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <svg class="search" fill="#050505" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                     <path fill="none" d="M0 0h24v24H0V0z" />
                                                     <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
                                                 </svg>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a asp-controller="Cart" asp-action="Index" style="color: white;">
-
-                                                <svg class="cart" style="fill: white;">
+                                        <li class="pe-3">
+                                            <a asp-area="" asp-controller="Cart" asp-action="Index" style="color: black;">
+                                                <svg class="cart" style="fill: black;">
                                                     <use xlink:href="#cart"></use>
                                                 </svg>
+                                                @if (ViewBag.CartItemCount > 0)
+                                                {
+                                                    <span style="color:black;">@ViewBag.CartItemCount</span>
+                                                }
                                             </a>
                                         </li>
-                                        <partial name="_LoginPartial" />
+                                        <li class="pe-3">
+                                            <partial name="_LoginPartial" />
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
                         </ul>
+
+                        <!-- Combobox for mobile -->
+                        <select id="mobileNavbar" class="form-select d-block d-lg-none">
+                            <option value="#" selected>Menu</option>
+                            <option value="home">Trang Chủ</option>
+                            <option value="services">Services</option>
+                            <option value="product">Sản Phẩm</option>
+                            <!-- Other options -->
+                        </select>
                     </div>
                 </div>
+
             </div>
         </nav>
     </header>
- 
+
     @RenderBody()
-  
 
     <script>
+        document.querySelector('.search-button').addEventListener('click', function () {
+            document.querySelector('.search-popup').style.display = 'block';
+        });
+
+        document.querySelector('#search-form').addEventListener('input', function () {
+            var searchTerm = this.value;
+            if (searchTerm.length >= 1) {
+                fetch('/Product/Autocomplete?term=' + encodeURIComponent(searchTerm))
+                    .then(response => response.json())
+                    .then(data => {
+                        var resultsContainer = document.getElementById('autocomplete-results');
+                        resultsContainer.innerHTML = '';
+                        data.forEach(function (result) {
+                            var resultElement = document.createElement('div');
+                            resultElement.textContent = result;
+                            // Xử lý sự kiện click cho mỗi kết quả autocomplete
+                            resultElement.addEventListener('click', function () {
+                                // Thay thế dấu cách bằng dấu gạch ngang trong kết quả trước khi chuyển hướng
+                                var slug = result.replace(/\s+/g, '-'); // Thay thế dấu cách bằng dấu gạch ngang
+                                window.location.href = '/Product/Details/' + slug;
+                            });
+                            resultsContainer.appendChild(resultElement);
+                        });
+                    });
+            } else {
+                document.getElementById('autocomplete-results').innerHTML = '';
+            }
+            function removeVietnameseAccents(str) {
+                var from = "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸ";
+                var to = "aaaaaaaaaaaaaaaaaeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyyAAAAAAAAAAAAAAAAAEEEEEEEEEEEIIIIIOOOOOOOOOOOOOOOOOUUUUUUUUUUUYYYYY";
+                for (var i = 0; i < from.length; i++) {
+                    str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+                }
+                return str;
+            }
+        });
+    </script>
+<script>
         function showDropdown() {
             var dropdown = document.getElementById("productDropdown");
             dropdown.classList.add("show");
@@ -257,7 +277,16 @@
             var dropdown = document.getElementById("productDropdown");
             dropdown.classList.remove("show");
         }
+
     </script>
+
+    <!-- Bao gồm jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bao gồm jQuery UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
     <script src="~/js/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="~/js/bootstrap.bundle.min.js"></script>

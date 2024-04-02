@@ -15,7 +15,7 @@ using DoAnNhom_2.Data;
 namespace DoAnNhom_2.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _dataContext;

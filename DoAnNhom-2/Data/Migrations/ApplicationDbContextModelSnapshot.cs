@@ -46,7 +46,7 @@ namespace DoAnNhom_2.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brand", (string)null);
+                    b.ToTable("Brand");
                 });
 
             modelBuilder.Entity("DoAnNhom_2.Models.CategoryModel", b =>
@@ -85,10 +85,10 @@ namespace DoAnNhom_2.Data.Migrations
 
                     b.HasIndex("ParentCategoryId");
 
-                    b.ToTable("Category", (string)null);
+                    b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("DoAnNhom_2.Models.OrderDetails", b =>
+            modelBuilder.Entity("DoAnNhom_2.Models.DiscountCode", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,7 +96,44 @@ namespace DoAnNhom_2.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Discount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DiscountCodes");
+                });
+
+            modelBuilder.Entity("DoAnNhom_2.Models.MoMoPayment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ErrorCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("OrderCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
@@ -113,7 +150,44 @@ namespace DoAnNhom_2.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderDetails", (string)null);
+                    b.ToTable("MoMoPayments");
+                });
+
+            modelBuilder.Entity("DoAnNhom_2.Models.OrderDetails", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("DoAnNhom_2.Models.OrderModel", b =>
@@ -138,7 +212,7 @@ namespace DoAnNhom_2.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("DoAnNhom_2.Models.ProductModel", b =>
@@ -174,6 +248,12 @@ namespace DoAnNhom_2.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Size")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Slug")
                         .HasColumnType("nvarchar(max)");
 
@@ -183,7 +263,7 @@ namespace DoAnNhom_2.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -386,6 +466,88 @@ namespace DoAnNhom_2.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Result", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("accessKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("amount")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("errorCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("extraData")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("localMessage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("orderId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("orderInfo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("orderType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("partnerCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("payType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("requestId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("responseTime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("signature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("transId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Results");
                 });
 
             modelBuilder.Entity("DoAnNhom_2.Models.CategoryModel", b =>
