@@ -286,3 +286,5 @@ C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\obj\Debug\net6.0\refint\DoA
 C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\obj\Debug\net6.0\DoAnNhom-2.pdb
 C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\obj\Debug\net6.0\DoAnNhom-2.genruntimeconfig.cache
 C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\obj\Debug\net6.0\ref\DoAnNhom-2.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll

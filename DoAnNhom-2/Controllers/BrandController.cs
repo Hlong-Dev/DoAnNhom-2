@@ -13,6 +13,7 @@ namespace DoAnNhom_2.Controllers
         {
             _dataContext = context;
         }
+
         public async Task<IActionResult> Index(string Slug = "")
         {
             BrandModel brand = _dataContext.Brands.Where(c => c.Slug == Slug).FirstOrDefault();

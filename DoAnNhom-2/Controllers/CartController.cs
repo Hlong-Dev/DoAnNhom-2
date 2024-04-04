@@ -28,7 +28,7 @@ namespace DoAnNhom_2.Controllers
             _userManager = userManage;
             _discountCodeRepository = discountCodeRepository;
         }
-
+        [Route("gio-hang")]
         public IActionResult Index()
         {
             List<CartItemModel> cartitems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
