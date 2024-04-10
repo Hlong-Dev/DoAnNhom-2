@@ -2,7 +2,7 @@
 using DoAnNhom_2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+using X.PagedList;
 namespace DoAnNhom_2.Controllers
 {
     public class ProductController : Controller
@@ -17,20 +17,24 @@ namespace DoAnNhom_2.Controllers
         }
 
         // Action để hiển thị danh sách sản phẩm
-        public IActionResult Index()
+        [Route("san-pham")]
+        public IActionResult Index(int? page)
         {
+            int pageNumber = page ?? 1; // Số trang hiện tại, nếu không có thì mặc định là 1
+            int pageSize = 3; // Số sản phẩm trên mỗi trang
+
             var products = _dataContext.Products
                 .OrderByDescending(p => p.Slug)
                 .Include(p => p.Category)
                 .Include(p => p.Brand)
                 .Where(p => !p.IsDeleted)
-                .ToList();
+                .ToPagedList(pageNumber, pageSize);
 
             return View(products);
         }
 
         // Action để hiển thị chi tiết sản phẩm
-     
+        [Route("{slug}")]
         public IActionResult Details(string slug)
         {
             if (string.IsNullOrEmpty(slug))
@@ -52,13 +56,15 @@ namespace DoAnNhom_2.Controllers
         }
 
         [HttpPost]
-        public IActionResult Search(string searchTerm)
+        public IActionResult Search(string searchTerm, int? page)
         {
+            int pageNumber = page ?? 1; // Số trang hiện tại, nếu không có thì mặc định là 1
+            int pageSize = 3; // Số sản phẩm trên mỗi trang
             var results = _dataContext.Products
                 .Include(p => p.Category)
                 .Include(p => p.Brand) 
                 .Where(p => p.IsDeleted == false && (p.Name.Contains(searchTerm) || p.Description.Contains(searchTerm)))
-                .ToList();
+                .ToPagedList(pageNumber, pageSize);
 
             return View("SearchResult", results);
         }

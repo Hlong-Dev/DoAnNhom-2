@@ -143,7 +143,7 @@
                                         <a asp-area="" asp-controller="Product" asp-action="Index" class="dropdown-item">Tivi Cũ</a>
                                     </li>
                                     <li>
-                                        <a href="https://localhost:7261/category/Apple-TV-4K" class="dropdown-item">Tivi Mới</a>
+                                        <a href="https://localhost:7261/Product/index" class="dropdown-item">Tivi Mới</a>
                                     </li>
                                 </ul>
                             </li>
@@ -249,7 +249,7 @@
                             resultElement.addEventListener('click', function () {
                                 // Thay thế dấu cách bằng dấu gạch ngang trong kết quả trước khi chuyển hướng
                                 var slug = result.replace(/\s+/g, '-'); // Thay thế dấu cách bằng dấu gạch ngang
-                                window.location.href = '/Product/Details/' + slug;
+                                window.location.href = 'Details/' + slug;
                             });
                             resultsContainer.appendChild(resultElement);
                         });

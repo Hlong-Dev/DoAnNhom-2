@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Xo4Z9goNM4MNVebM78m3lbCIybB3ixLJ1fSB+CAA34FkT1Tll1EIlcp5pusMfyWtjSXaytiJ40ilae2ShVrqzg==",
+  "dgSpecHash": "rXVhpjxobRxpGzqxzQmK7W7/LA6A6gjQrjjjvfS3/fpCXda0pKPRSIUJyl4n/+ePt+Dqr8TwjFck0hDfzpGr1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\DoAnNhom-2.csproj",
   "expectedPackageFiles": [
@@ -236,7 +236,9 @@
     "C:\\Users\\hlongday\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\hlongday\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\hlongday\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\hlongday\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\hlongday\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\hlongday\\.nuget\\packages\\x.pagedlist\\9.1.2\\x.pagedlist.9.1.2.nupkg.sha512",
+    "C:\\Users\\hlongday\\.nuget\\packages\\x.pagedlist.mvc.core\\9.1.2\\x.pagedlist.mvc.core.9.1.2.nupkg.sha512"
   ],
   "logs": []
 }

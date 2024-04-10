@@ -26,6 +26,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddScoped<IDiscountCodeRepository, DiscountCodeRepository>();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
+    .AddDefaultTokenProviders()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.Configure<IdentityOptions>(options =>
@@ -58,25 +59,29 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapRazorPages();
 app.MapControllerRoute(
     name: "Areas",
-    pattern: "{area:exists}/{controller=Product}/{action=Index}/{id?}");
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 app.MapControllerRoute(
     name: "category",
-    pattern: "category/{Slug?}",
+    pattern: "danh-muc/{Slug?}",
     defaults: new { controller = "Category", action = "Index" });
 app.MapControllerRoute(
     name: "brand",
-    pattern: "brand/{Slug?}",
+    pattern: "thuong-hieu/{Slug?}",
     defaults: new { controller = "Brand", action = "Index" });
+//app.MapControllerRoute(
+//    name: "Details",
+//    pattern: "Details/{slug?}",
+//    defaults: new { controller = "Product", action = "Details" });
 app.MapControllerRoute(
-    name: "Details",
-    pattern: "Details/{slug?}",
-    defaults: new { controller = "Product", action = "Details" });
-
+    name: "product",
+    pattern: "san-pham",
+    defaults: new { controller = "Product", action = "Index" });
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapRazorPages();
+
 
 app.Run();

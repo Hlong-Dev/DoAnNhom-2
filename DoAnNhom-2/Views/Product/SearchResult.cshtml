@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DoAnNhom_2.Models.ProductModel>
+﻿@model X.PagedList.IPagedList<DoAnNhom_2.Models.ProductModel>
+@using X.PagedList.Mvc.Core
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -95,17 +96,22 @@
                         <div class="col text-center">
                             <div class="block-27">
                                 <ul>
-                                    <li><a href="#">&lt;</a></li>
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">&gt;</a></li>
+                                    <!-- Nút Previous -->
+                                    <li><a href="@Url.Action("Index", new { page = Model.HasPreviousPage ? Model.PageNumber - 1 : 1 })">&lt;</a></li>
+
+                                    <!-- Các trang -->
+                                    @for (int i = 1; i <= Model.PageCount; i++)
+                                    {
+                                        <li class="@((Model.PageNumber == i) ? "active" : "")"><a href="@Url.Action("Index", new { page = i })">@i</a></li>
+                                    }
+
+                                    <!-- Nút Next -->
+                                    <li><a href="@Url.Action("Index", new { page = Model.HasNextPage ? Model.PageNumber + 1 : Model.PageCount })">&gt;</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="col-md-4 col-lg-2">

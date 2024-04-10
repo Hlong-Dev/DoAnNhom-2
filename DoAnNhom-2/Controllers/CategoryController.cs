@@ -13,6 +13,7 @@ namespace DoAnNhom2.Controllers
         {
             _dataContext = context;
         }
+      
         public async Task<IActionResult> Index(string Slug = "")
         {
             CategoryModel categoty = _dataContext.Categories.Where(c => c.Slug == Slug).FirstOrDefault();
