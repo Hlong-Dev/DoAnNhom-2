@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace DoAnNhom_2.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = SD.Role_Admin)]
+    [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
     public class CategoryController : Controller
     {
         private readonly ApplicationDbContext _dataContext;
@@ -26,7 +26,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
         {
             return View(await _dataContext.Categories.OrderByDescending(p => p.Id).Where(p => p.IsDeleted == false).ToListAsync());
         }
-
+  
         public IActionResult Create()
         {
             return View();
@@ -67,7 +67,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
                 return BadRequest(errorMessage);
             }
         }
-
+ 
         public async Task<IActionResult> Edit(int Id)
         {
             CategoryModel category = await _dataContext.Categories.FindAsync(Id);
@@ -118,7 +118,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
                 return BadRequest(errorMessage);
             }
         }
-
+        [Authorize(Roles = SD.Role_Admin)]
         [HttpPost]
         public async Task<IActionResult> Delete(int Id)
         {

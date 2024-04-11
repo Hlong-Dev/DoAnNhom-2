@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace DoAnNhom2.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = SD.Role_Admin)]
+    [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
     public class BrandController : Controller
     {
         private readonly ApplicationDbContext _dataContext;
@@ -115,7 +115,7 @@ namespace DoAnNhom2.Areas.Admin.Controllers
                 return BadRequest(errorMessage);
             }
         }
-
+        [Authorize(Roles = SD.Role_Admin)]
         public async Task<IActionResult> Delete(int Id)
         {
             BrandModel brand = await _dataContext.Brands.FindAsync(Id);

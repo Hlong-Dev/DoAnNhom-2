@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 namespace DoAnNhom_2.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = SD.Role_Admin)]
+   
+    [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
     public class UserController : Controller
     {
         private readonly ApplicationDbContext _dataContext;
@@ -44,7 +45,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
         {
             return View();
         }
-
+        [Authorize(Roles = SD.Role_Admin)]
         [HttpPost]
         public async Task<IActionResult> Create(ApplicationUser user)
         {
@@ -55,7 +56,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
             }
             return View(user);
         }
-
+        [Authorize(Roles = SD.Role_Admin)]
         [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
@@ -82,7 +83,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
 
             return View(viewModel);
         }
-
+        [Authorize(Roles = SD.Role_Admin)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, UserEditViewModel model)
@@ -121,7 +122,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
 
             return View(model);
         }
-
+        [Authorize(Roles = SD.Role_Admin)]
         [HttpPost]
         public async Task<IActionResult> Delete(string id)
         {
