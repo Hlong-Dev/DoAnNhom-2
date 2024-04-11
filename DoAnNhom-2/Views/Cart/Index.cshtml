@@ -1,4 +1,4 @@
-﻿
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <section id="cart_items">
     <div class="container">
         <div class="breadcrumbs">
@@ -135,7 +135,21 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-dark rounded-pill btn-block py-2" id="btnThanhToan">Thanh Toán</button>
+                        @using Microsoft.AspNetCore.Identity
+                        @inject SignInManager<ApplicationUser> SignInManager
+                        @inject UserManager<ApplicationUser> UserManager
+
+                       
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                            <button type="button" class="btn btn-dark rounded-pill btn-block py-2" id="btnThanhToan">Thanh Toán</button>
+
+
+                            }
+                        else
+                        {
+                            <a class="btn btn-dark rounded-pill btn-block py-2" href="/Identity/Account/Login">Đăng nhập để thanh toán</a>
+                        }
                     </form>
                 </div>
 
@@ -181,7 +195,7 @@
         </div>
     </div>
 </div>
-
+@Html.Partial("_FooterBottomPartial")
 <script>
     document.getElementById("btnDatHang").addEventListener("click", function () {
         document.getElementById("orderForm").submit();
@@ -218,9 +232,3 @@
         }
     });
 </script>
-
-
-
-
-
-@Html.Partial("_FooterBottomPartial")

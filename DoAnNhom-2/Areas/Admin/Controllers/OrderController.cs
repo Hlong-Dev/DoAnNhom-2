@@ -1,4 +1,5 @@
-﻿using DoAnNhom_2.Data;
+﻿using DoAnNhom_2.Models;
+using DoAnNhom_2.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -6,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DoAnNhom_2.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = SD.Role_Admin)]
     public class OrderController : Controller
     {
         private readonly ApplicationDbContext _dataContext;

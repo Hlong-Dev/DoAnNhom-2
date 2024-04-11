@@ -13,9 +13,9 @@ namespace DoAnNhom_2.Controllers
     public class CheckoutController : Controller
     {
         private readonly ApplicationDbContext _datacontext;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public CheckoutController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public CheckoutController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _datacontext = context;
             _userManager = userManager;
@@ -24,7 +24,7 @@ namespace DoAnNhom_2.Controllers
         public async Task<IActionResult> Checkout(string fullName, string phoneNumber, string address, string note)
         {
             // Lấy thông tin người dùng từ Identity
-            IdentityUser user = await _userManager.GetUserAsync(User);
+            ApplicationUser user = await _userManager.GetUserAsync(User);
 
             if (user == null)
             {

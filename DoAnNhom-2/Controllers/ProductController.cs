@@ -1,5 +1,6 @@
 ﻿using DoAnNhom_2.Data;
 using DoAnNhom_2.Models;
+using DoAnNhom_2.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
@@ -20,6 +21,8 @@ namespace DoAnNhom_2.Controllers
         [Route("san-pham")]
         public IActionResult Index(int? page)
         {
+            List<CartItemModel> cartitems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
+
             int pageNumber = page ?? 1; // Số trang hiện tại, nếu không có thì mặc định là 1
             int pageSize = 3; // Số sản phẩm trên mỗi trang
 

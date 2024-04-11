@@ -12,10 +12,11 @@ using DoAnNhom_2.Repository;
 using Microsoft.AspNetCore.Authorization;
 using DoAnNhom_2.Data;
 
+
 namespace DoAnNhom_2.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _dataContext;

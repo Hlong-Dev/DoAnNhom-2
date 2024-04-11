@@ -20,9 +20,9 @@ namespace DoAnNhom_2.Controllers
     public class CartController : Controller
     {
         private readonly ApplicationDbContext _dataContext;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IDiscountCodeRepository _discountCodeRepository;
-        public CartController(ApplicationDbContext _context, UserManager<IdentityUser> userManage, IDiscountCodeRepository discountCodeRepository)
+        public CartController(ApplicationDbContext _context, UserManager<ApplicationUser> userManage, IDiscountCodeRepository discountCodeRepository)
         {
             _dataContext = _context;
             _userManager = userManage;
@@ -44,7 +44,7 @@ namespace DoAnNhom_2.Controllers
 
             // Tính tổng giá cũ sau khi đã giảm giá
 
-            CartItemViewModel cartVN = new()
+            UserIndexViewModel cartVN = new()
             {
                 CartItems = cartitems,
                 GrandTotal = grandTotal,
@@ -222,7 +222,7 @@ namespace DoAnNhom_2.Controllers
 
         public async Task<IActionResult> ConfirmPaymentClient(Result result,string fullName, string phoneNumber, string address)
         {
-            IdentityUser user = await _userManager.GetUserAsync(User);
+            ApplicationUser user = await _userManager.GetUserAsync(User);
             var orderCode = Guid.NewGuid().ToString();
             var orderItem = new OrderModel
             {

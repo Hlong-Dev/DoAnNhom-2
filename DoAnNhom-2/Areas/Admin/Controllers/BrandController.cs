@@ -1,4 +1,5 @@
-﻿using DoAnNhom_2.Data;
+﻿
+using DoAnNhom_2.Data;
 using DoAnNhom_2.Models;
 using DoAnNhom_2.Repository;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 namespace DoAnNhom2.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = SD.Role_Admin)]
     public class BrandController : Controller
     {
         private readonly ApplicationDbContext _dataContext;

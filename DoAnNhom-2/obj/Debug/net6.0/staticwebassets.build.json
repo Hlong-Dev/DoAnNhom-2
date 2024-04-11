@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X0Y6xewHqpJOmZIBQ7cEOJccx6S/15eiYb9jeY8SK/Y=",
+  "Hash": "5xFPUgIR2UuIJxyw86aK3CEyqleRO4IV7aGiNXI1wGc=",
   "Source": "DoAnNhom-2",
   "BasePath": "_content/DoAnNhom-2",
   "Mode": "Default",
@@ -3925,6 +3925,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\products\\210e2fea-d47f-44f5-b844-5a3282a911b6_tv9.png"
+    },
+    {
+      "Identity": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\22470309-3c97-4152-b09b-6dcc640740c0_tv10.png",
+      "SourceId": "DoAnNhom-2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\",
+      "BasePath": "_content/DoAnNhom-2",
+      "RelativePath": "media/products/22470309-3c97-4152-b09b-6dcc640740c0_tv10.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\products\\22470309-3c97-4152-b09b-6dcc640740c0_tv10.png"
     },
     {
       "Identity": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\3120fba2-3e6a-475f-a134-15f599fbd722_tv5.png",
