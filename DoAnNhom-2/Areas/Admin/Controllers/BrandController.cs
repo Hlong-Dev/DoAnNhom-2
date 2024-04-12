@@ -20,7 +20,7 @@ namespace DoAnNhom2.Areas.Admin.Controllers
         {
             _dataContext = context;
         }
-
+        [Route("quan-ly-thuong-hieu")]
         public async Task<IActionResult> Index()
         {
             return View(await _dataContext.Brands.OrderByDescending(p => p.Id).ToListAsync());

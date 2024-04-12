@@ -1,0 +1,25 @@
+﻿@model IEnumerable<DoAnNhom_2.Models.DiscountCodeModel>
+
+<h2>Discount Codes</h2>
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Code</th>
+                <th>Discount (%)</th>
+      
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Code)</td>
+                    <td>@(item.Discount * 100)%</td>
+                    <!-- Hiển thị giảm giá dưới dạng phần trăm -->
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

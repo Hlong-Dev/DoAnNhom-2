@@ -309,6 +309,14 @@ namespace DoAnNhom_2.Controllers
                     item.Discount = discountAmount;
                 }
 
+                // Giảm số lượng của mã giảm giá đã sử dụng
+                bool discountCodeUsed = await _discountCodeRepository.UseDiscountCodeAsync(discountCode);
+                if (!discountCodeUsed)
+                {
+                    TempData["error"] = "Không thể sử dụng lại mã giảm giá.";
+                    return RedirectToAction("Index");
+                }
+
                 HttpContext.Session.SetJson("Cart", cartItems);
                 TempData["success"] = successMessage;
             }

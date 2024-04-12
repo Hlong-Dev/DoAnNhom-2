@@ -21,7 +21,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
         {
             _dataContext = context;
         }
-
+        [Route("quan-ly-danh-muc")]
         public async Task<IActionResult> Index()
         {
             return View(await _dataContext.Categories.OrderByDescending(p => p.Id).Where(p => p.IsDeleted == false).ToListAsync());
@@ -88,7 +88,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
             }
 
             if (ModelState.IsValid)
-            {
+            {  
                 // Check if category with the same name already exists
                 category.Slug = category.Name.Replace(" ", "-");
                 var slug = await _dataContext.Categories.FirstOrDefaultAsync(p => p.Slug == category.Slug && p.Id != category.Id);

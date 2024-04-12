@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DoAnNhom_2.Models.OrderDetails>
+
+<h2>My Orders</h2>
+
+@if (Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Full Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>@order.ProductId</td>
+                        <td>@order.Price.ToString("N0") VND</td>
+                        <td>@order.Quantity</td>
+                        <td>@order.FullName</td>
+                        <td>@order.Address</td>
+                        <td>@order.PhoneNumber</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>No orders found.</p>
+}

@@ -9,4 +9,5 @@ public class ApplicationUser : IdentityUser
     public bool? IsDeleted { get; set; }
     public ICollection<OrderDetails> OrderDetails { get; set; }
     public Cart Cart { get; set; }
+
 }

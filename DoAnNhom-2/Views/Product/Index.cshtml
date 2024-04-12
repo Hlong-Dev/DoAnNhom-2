@@ -55,8 +55,20 @@
 <section class="ftco-section bg-light">
     <div class="container">
         <div class="row">
+           
+
             <div class="col-md-8 col-lg-10 order-md-last">
                 <div class="row">
+                    <form asp-action="SortByPrice">
+                        @* Thêm nút sắp xếp từ thấp đến cao *@
+                        <a asp-controller="Product" asp-action="SortByPrice" asp-route-sortOrder="price_asc" class="btn btn-primary">Sắp xếp giá từ thấp đến cao</a>
+
+                        @* Thêm nút sắp xếp từ cao đến thấp *@
+                        <a asp-controller="Product" asp-action="SortByPrice" asp-route-sortOrder="price_desc" class="btn btn-primary">Sắp xếp giá từ cao đến thấp</a>
+
+                    </form>
+
+                    <div style="height: 80px;"></div>
                     @foreach (var item in Model)
                     {
                         <div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">

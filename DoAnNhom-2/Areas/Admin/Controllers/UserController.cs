@@ -25,7 +25,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
-
+        [Route("quan-ly-nguoi-dung")]
         public async Task<IActionResult> Index()
         {
             var users = await _dataContext.Users.ToListAsync();
