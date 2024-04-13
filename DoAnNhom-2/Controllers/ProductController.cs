@@ -24,7 +24,7 @@ namespace DoAnNhom_2.Controllers
             List<CartItemModel> cartitems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
 
             int pageNumber = page ?? 1; // Số trang hiện tại, nếu không có thì mặc định là 1
-            int pageSize = 3; // Số sản phẩm trên mỗi trang
+            int pageSize = 9; // Số sản phẩm trên mỗi trang
 
             var products = _dataContext.Products
                 .OrderByDescending(p => p.Slug)

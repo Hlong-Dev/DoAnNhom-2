@@ -1,4 +1,7 @@
-﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <section id="cart_items">
     <div class="container">
         <div class="breadcrumbs">
@@ -108,16 +111,35 @@
                         Thông tin nhận hàng
                     </div>
                     <form id="checkoutForm" method="post" action="@Url.Action("Checkout", "Checkout")">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="txtHoTen" name="FullName" placeholder="Họ và tên" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control" id="txtSDT" name="PhoneNumber" placeholder="Số điện thoại" pattern="[0-9]{10}" title="Số điện thoại phải là 10 chữ số" required>
-                        </div>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            // Hiển thị thông tin người dùng đã đăng nhập
+                            var user = await UserManager.GetUserAsync(User);
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="txtHoTen" name="FullName" placeholder="Họ và tên" value="@user.Fullname" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" id="txtSDT" name="PhoneNumber" placeholder="Số điện thoại" value="@user.PhoneNumber" pattern="[0-9]{10}" title="Số điện thoại phải là 10 chữ số" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" id="txtDiaChi" name="Address" placeholder="Địa chỉ" value="@user.Address" pattern="[0-9]{10}" title="Số điện thoại phải là 10 chữ số" required>
+                            </div>
+                        }
+                        else
+                        {
+                            // Hiển thị trường nhập thông tin cho người dùng chưa đăng nhập
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="txtHoTen" name="FullName" placeholder="Họ và tên" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" id="txtSDT" name="PhoneNumber" placeholder="Số điện thoại" pattern="[0-9]{10}" title="Số điện thoại phải là 10 chữ số" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="Address" id="txtDiaChi" cols="30" rows="2" class="form-control" placeholder="Địa chỉ"></textarea>
+                            </div>
+                        }
 
-                        <div class="form-group">
-                            <textarea name="Address" id="txtDiaChi" cols="30" rows="2" class="form-control" placeholder="Địa chỉ"></textarea>
-                        </div>
+                       
                         <div class="form-group">
                             <textarea name="Note" id="txtGhiChu" cols="30" rows="3" class="form-control" placeholder="Ghi chú cho người bán"></textarea>
                         </div>
@@ -135,22 +157,16 @@
                                 </div>
                             </div>
                         </div>
-                        @using Microsoft.AspNetCore.Identity
-                        @inject SignInManager<ApplicationUser> SignInManager
-                        @inject UserManager<ApplicationUser> UserManager
-
-                       
-                            @if (SignInManager.IsSignedIn(User))
-                            {
+                        @if (SignInManager.IsSignedIn(User))
+                        {
                             <button type="button" class="btn btn-dark rounded-pill btn-block py-2" id="btnThanhToan">Thanh Toán</button>
-
-
-                            }
+                        }
                         else
                         {
                             <a class="btn btn-dark rounded-pill btn-block py-2" href="/Identity/Account/Login">Đăng nhập để thanh toán</a>
                         }
                     </form>
+
                 </div>
 
             </div>

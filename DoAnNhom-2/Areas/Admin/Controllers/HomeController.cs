@@ -1,4 +1,6 @@
 ﻿using DoAnNhom_2.Data;
+using DoAnNhom_2.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,6 +10,7 @@ using System.Threading.Tasks;
 namespace DoAnNhom_2.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _dataContext;
