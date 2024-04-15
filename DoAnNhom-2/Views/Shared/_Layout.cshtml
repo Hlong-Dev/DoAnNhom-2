@@ -140,10 +140,11 @@
                                 <a asp-area="" asp-controller="Product" asp-action="Index" class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">Sản Phẩm</a>
                                 <ul class="dropdown-menu" id="productDropdown">
                                     <li>
-                                        <a asp-area="" asp-controller="Product" asp-action="Index" class="dropdown-item">Tivi Cũ</a>
+                                        <a asp-area="" asp-controller="Product" asp-action="Index" class="dropdown-item">Sản Phẩm mới nhất</a>
                                     </li>
                                     <li>
-                                        <a href="https://localhost:7261/Product/index" class="dropdown-item">Tivi Mới</a>
+                                       @*  <a href="https://localhost:7261/Product/index" class="dropdown-item"></a> *@
+                                        <a asp-area="" asp-controller="Product" asp-action="Index2" class="dropdown-item">sản phẩm giảm giá</a>
                                     </li>
                                 </ul>
                             </li>
@@ -159,27 +160,17 @@
                                     <li>
                                         <a href="about.html" class="dropdown-item">About</a>
                                     </li>
+
                                     <li>
-                                        <a href="blog.html" class="dropdown-item">Blog</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop.html" class="dropdown-item">Shop</a>
+                                        <a asp-area="" asp-controller="Order" asp-action="Index" class="dropdown-item">Đơn hàng</a>
                                     </li>
                                     <li>
                                         <a asp-area="" asp-controller="Cart" asp-action="Index" class="dropdown-item">Giỏ Hàng</a>
                                     </li>
                                     <li>
-                                        <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                        <a asp-area="" asp-controller="DiscountCode" asp-action="Index" class="dropdown-item">Mã giảm giá</a>
                                     </li>
-                                    <li>
-                                        <a href="single-post.html" class="dropdown-item">Single Post</a>
-                                    </li>
-                                    <li>
-                                        <a href="single-product.html" class="dropdown-item">Single Product</a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html" class="dropdown-item">Contact</a>
-                                    </li>
+                                   
                                 </ul>
                             </li>
                             <li class="nav-item">

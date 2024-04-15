@@ -27,6 +27,16 @@
 <link rel="stylesheet" href="~/Product/css/icomoon.css">
 <link rel="stylesheet" href="~/Product/css/style.css">
 
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="#">Products</a></li>
+                <li class="active">Shopping Cart</li>
+            </ol>
+        </div>
+    </div>
+</section>
 
 
 <div class="hero-wrap hero-bread" style="background-image: url('images/tv40.jpg');">
@@ -45,8 +55,20 @@
 <section class="ftco-section bg-light">
     <div class="container">
         <div class="row">
+           
+
             <div class="col-md-8 col-lg-10 order-md-last">
                 <div class="row">
+                    <form asp-action="SortByPrice">
+                        @* Thêm nút sắp xếp từ thấp đến cao *@
+                        <a asp-controller="Product" asp-action="SortByPrice" asp-route-sortOrder="price_asc" class="btn btn-primary">Sắp xếp giá từ thấp đến cao</a>
+
+                        @* Thêm nút sắp xếp từ cao đến thấp *@
+                        <a asp-controller="Product" asp-action="SortByPrice" asp-route-sortOrder="price_desc" class="btn btn-primary">Sắp xếp giá từ cao đến thấp</a>
+
+                    </form>
+
+                    <div style="height: 80px;"></div>
                     @foreach (var item in Model)
                     {
                         <div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">

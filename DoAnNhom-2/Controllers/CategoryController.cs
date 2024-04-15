@@ -4,7 +4,7 @@ using DoAnNhom_2.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace DoAnNhom2.Controllers
+namespace DoAnNhom_2.Controllers
 {
     public class CategoryController : Controller
     {

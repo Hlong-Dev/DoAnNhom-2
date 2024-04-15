@@ -1,16 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
+﻿using DoAnNhom_2.Models;
+using Microsoft.AspNetCore.Identity;
 
-namespace DoAnNhom_2
+public class ApplicationUser : IdentityUser
 {
-    public class ApplicationUser : IdentityUser
-    {
-        // Thêm thuộc tính Address
-        public virtual string Address { get; set; }
+    public string Fullname { get; set; }
+    public string? Address { get; set; }
+    public int Age { get; set; }
+    public bool? IsDeleted { get; set; }
+    public ICollection<OrderDetails> OrderDetails { get; set; }
+    public Cart Cart { get; set; }
 
-        // Constructors
-        public ApplicationUser() : base() { }
-
-        public ApplicationUser(string userName) : base(userName) { }
-    }
 }

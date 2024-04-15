@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model DoAnNhom_2.Areas.Admin.Controllers.UserIndexViewModel
+@inject UserManager<ApplicationUser> UserManager
+<div style="height: 180px;"></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Actions</th> <!-- Thêm cột mới cho các hành động -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>
+                    @{
+                        var roles = await UserManager.GetRolesAsync(user);
+                        foreach (var role in roles)
+                        {
+                            <span>@role</span>
+                        }
+                    }
+                </td>
+                <td>
+                    <!-- Thêm nút sửa -->
+                    <a asp-action="Edit" asp-route-id="@user.Id">Edit</a> |
+                    @if (User.IsInRole(SD.Role_Admin))
+                    {
+                        <form asp-action="Lockout" asp-route-id="@user.Id" method="post">
+                            <button type="submit" class="btn btn-danger">Khóa tài khoản</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

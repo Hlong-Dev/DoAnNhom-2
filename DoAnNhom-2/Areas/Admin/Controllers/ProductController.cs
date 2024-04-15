@@ -12,10 +12,11 @@ using DoAnNhom_2.Repository;
 using Microsoft.AspNetCore.Authorization;
 using DoAnNhom_2.Data;
 
+
 namespace DoAnNhom_2.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _dataContext;
@@ -26,12 +27,12 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
             _dataContext = context;
             _webHostEnvironment = webHostEnvironment;
         }
-
+        [Route("quan-ly-san-pham")]
         public async Task<IActionResult> Index()
         {
             return View(await _dataContext.Products.OrderByDescending(p => p.Id).Include(p => p.Category).Include(p => p.Brand).Where(p => p.IsDeleted == false).ToListAsync());
         }
-
+        [Authorize(Roles = SD.Role_Admin)]
         [HttpGet]
         public IActionResult Create()
         {
@@ -89,7 +90,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
                 return BadRequest(errorMessage);
             }
         }
-
+        [Authorize(Roles = SD.Role_Admin)]
         [HttpGet]
         public async Task<IActionResult> Edit(int Id)
         {
@@ -186,7 +187,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
             }
         }
 
-
+        [Authorize(Roles = SD.Role_Admin)]
         public async Task<IActionResult> Delete(int Id)
         {
             ProductModel product = await _dataContext.Products.FindAsync(Id);

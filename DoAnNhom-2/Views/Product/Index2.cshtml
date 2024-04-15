@@ -1,0 +1,332 @@
+﻿@model X.PagedList.IPagedList<DoAnNhom_2.Models.ProductModel>
+@using X.PagedList.Mvc.Core
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="~/Product/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="~/Product/css/animate.css">
+
+<link rel="stylesheet" href="~/Product/css/owl.carousel.min.css">
+<link rel="stylesheet" href="~/Product/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="~/Product/css/magnific-popup.css">
+
+<link rel="stylesheet" href="~/Product/css/aos.css">
+
+<link rel="stylesheet" href="~/Product/css/ionicons.min.css">
+
+<link rel="stylesheet" href="~/Product/bootstrap-datepicker.css">
+<link rel="stylesheet" href="~/Product/css/jquery.timepicker.css">
+
+
+<link rel="stylesheet" href="~/Product/css/flaticon.css">
+<link rel="stylesheet" href="~/Product/css/icomoon.css">
+<link rel="stylesheet" href="~/Product/css/style.css">
+
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="#">Products</a></li>
+                <li class="active">Shopping Cart</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+
+<div class="hero-wrap hero-bread" style="background-image: url('images/tv40.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"></span></p>
+                <p class="breadcrumbs"><span class="mr-2"></span></p>
+                <h1 class="mb-0 bread">HENRY</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a>Authorised store</a></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-md-8 col-lg-10 order-md-last">
+                <div class="row">
+                    <form asp-action="SortByPrice">
+                        @* Thêm nút sắp xếp từ thấp đến cao *@
+                        <a asp-controller="Product" asp-action="SortByPrice" asp-route-sortOrder="price_asc" class="btn btn-primary">Sắp xếp giá từ thấp đến cao</a>
+
+                        @* Thêm nút sắp xếp từ cao đến thấp *@
+                        <a asp-controller="Product" asp-action="SortByPrice" asp-route-sortOrder="price_desc" class="btn btn-primary">Sắp xếp giá từ cao đến thấp</a>
+
+                    </form>
+
+                    <div style="height: 80px;"></div>
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
+                            <div class="product d-flex flex-column">
+                                <a href="#" class="img-prod">
+
+                                    <img src="~/media/products/@item.Image" alt="@item.Name" class="img-fluid" style="width: 100%; height: 235px;" />
+
+
+                                    <div class="overlay"></div>
+                                </a>
+                                <div class="text py-3 pb-4 px-3">
+                                    <a asp-action="Details" asp-controller="Product" asp-route-slug="@item.Slug">
+                                        <h3>@item.Name</h3>
+                                    </a>
+                                    <div class="d-flex">
+                                        @if (item.OldPrice > 0)
+                                        {
+                                            <div class="price">
+                                                <span class="price" style="font-size: 18px; text-decoration: line-through;">@item.OldPrice.ToString("N0") VND</span>
+                                            </div>
+                                        }
+                                    </div>
+
+                                    <div class="pricing">
+                                        <p class="price"><span>@item.Price.ToString("N0") VND</span></p>
+                                    </div>
+
+                                    <p class="bottom-area d-flex px-3">
+                                        @* 		<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a> *@
+
+                                        <a href="#" class=" add-to-cart text-center py-2 mr-1" data-product-id="@item.Id">Thêm vào giỏ hàng</a>
+
+
+
+                                        <a asp-action="Details" asp-controller="Product" asp-route-slug="@item.Slug" class="buy-now text-center py-2">Chi Tiết<span><i class="ion-ios-cart ml-1"></i></span></a>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <div class="block-27">
+                            <ul>
+
+                                <li><a href="@Url.Action("Index", new { page = Model.HasPreviousPage ? Model.PageNumber - 1 : 1 })">&lt;</a></li>
+
+
+                                @for (int i = 1; i <= Model.PageCount; i++)
+                                {
+                                    <li class="@((Model.PageNumber == i) ? "active" : "")"><a href="/san-pham?page=@i">@i</a></li>
+                                }
+
+
+                                <li><a href="@Url.Action("Index", new { page = Model.HasNextPage ? Model.PageNumber + 1 : Model.PageCount })">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+                <div class="sidebar">
+                    <div class="sidebar-box-2">
+
+                        <div class="fancy-collapse-panel">
+                            @* <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Men's Shoes
+                            </a>
+                            </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                            <ul>
+                            <li><a href="#">Sport</a></li>
+                            <li><a href="#">Casual</a></li>
+                            <li><a href="#">Running</a></li>
+                            <li><a href="#">Jordan</a></li>
+                            <li><a href="#">Soccer</a></li>
+                            <li><a href="#">Football</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                            </ul>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Women's Shoes
+                            </a>
+                            </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                            <ul>
+                            <li><a href="#">Sport</a></li>
+                            <li><a href="#">Casual</a></li>
+                            <li><a href="#">Running</a></li>
+                            <li><a href="#">Jordan</a></li>
+                            <li><a href="#">Soccer</a></li>
+                            <li><a href="#">Football</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                            </ul>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Accessories
+                            </a>
+                            </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                            <ul>
+                            <li><a href="#">Jeans</a></li>
+                            <li><a href="#">T-Shirt</a></li>
+                            <li><a href="#">Jacket</a></li>
+                            <li><a href="#">Shoes</a></li>
+                            </ul>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                            Clothing
+                            </a>
+                            </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                            <div class="panel-body">
+                            <ul>
+                            <li><a href="#">Jeans</a></li>
+                            <li><a href="#">T-Shirt</a></li>
+                            <li><a href="#">Jacket</a></li>
+                            <li><a href="#">Shoes</a></li>
+                            </ul>
+                            </div>
+                            </div>
+                            </div>
+                            </div> *@
+                            @Html.Partial("_SidebarPartial")
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Partial("_FooterPartial")
+@Html.Partial("_FooterBottomPartial")
+<style>
+    #footer-bottom {
+        background-color: black;
+        color: white;
+    }
+
+        #footer-bottom p, #footer-bottom a {
+            color: white;
+        }
+
+</style>
+
+
+
+<script src="~/Product/js/jquery.min.js"></script>
+<script src="~/Product/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="~/Product/js/popper.min.js"></script>
+<script src="~/Product/js/bootstrap.min.js"></script>
+<script src="~/Product/js/jquery.easing.1.3.js"></script>
+<script src="~/Product/js/jquery.waypoints.min.js"></script>
+<script src="~/Product/js/jquery.stellar.min.js"></script>
+<script src="~/Product/js/owl.carousel.min.js"></script>
+<script src="~/Product/js/jquery.magnific-popup.min.js"></script>
+<script src="~/Product/js/aos.js"></script>
+<script src="~/Product/js/jquery.animateNumber.min.js"></script>
+<script src="~/Product/js/bootstrap-datepicker.js"></script>
+<script src="~/Product/js/scrollax.min.js"></script>
+
+<script src="~/Product/js/google-map.js"></script>
+<script src="~/Product/js/main.js"></script>
+<script>
+    $('.add-to-cart').click(function (e) {
+        e.preventDefault();
+        var productId = $(this).data('product-id');
+
+        // Gửi yêu cầu AJAX để kiểm tra số lượng hàng của sản phẩm
+        $.ajax({
+            url: '/Product/CheckQuantity?id=' + productId,
+            type: 'GET',
+            success: function (response) {
+                if (response.success) {
+                    // Nếu còn hàng, thêm vào giỏ hàng
+                    $.ajax({
+                        url: '/Cart/Add',
+                        type: 'POST',
+                        data: { Id: productId },
+                        success: function (response) {
+                            $('#notificationMessage').text(response.message);
+                            $('#notificationModal').modal('show');
+                        },
+                        error: function () {
+                            $('#notificationMessage').text('Đã xảy ra lỗi khi thêm sản phẩm vào giỏ hàng!');
+                            $('#notificationModal').modal('show');
+                        }
+                    });
+                } else {
+                    // Nếu hết hàng, hiển thị thông báo
+                    alert('Sản phẩm đã hết hàng.');
+                }
+            },
+            error: function () {
+                $('#notificationMessage').text('Đã xảy ra lỗi khi kiểm tra số lượng hàng của sản phẩm!');
+                $('#notificationModal').modal('show');
+            }
+        });
+    });
+
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationModalLabel">Thông báo</h5>
+                <button type="button" class="close" aria-label="Close" onclick="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="notificationMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function closeModal() {
+        $('#notificationModal').modal('hide');
+    }
+</script>

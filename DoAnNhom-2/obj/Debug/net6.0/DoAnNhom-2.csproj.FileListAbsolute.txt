@@ -288,3 +288,11 @@ C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\obj\Debug\net6.0\DoAnNhom-2
 C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\obj\Debug\net6.0\ref\DoAnNhom-2.dll
 C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\X.PagedList.dll
 C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\MailKit.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\MimeKit.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

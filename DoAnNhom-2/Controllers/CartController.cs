@@ -20,9 +20,9 @@ namespace DoAnNhom_2.Controllers
     public class CartController : Controller
     {
         private readonly ApplicationDbContext _dataContext;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IDiscountCodeRepository _discountCodeRepository;
-        public CartController(ApplicationDbContext _context, UserManager<IdentityUser> userManage, IDiscountCodeRepository discountCodeRepository)
+        public CartController(ApplicationDbContext _context, UserManager<ApplicationUser> userManage, IDiscountCodeRepository discountCodeRepository)
         {
             _dataContext = _context;
             _userManager = userManage;
@@ -44,7 +44,7 @@ namespace DoAnNhom_2.Controllers
 
             // Tính tổng giá cũ sau khi đã giảm giá
 
-            CartItemViewModel cartVN = new()
+            UserIndexViewModel cartVN = new()
             {
                 CartItems = cartitems,
                 GrandTotal = grandTotal,
@@ -151,7 +151,7 @@ namespace DoAnNhom_2.Controllers
         {
             List<CartItemModel> cartitems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
             int totalDiscount = (int)cartitems.Sum(x => x.Discount);
-            int totalAmount = (int)cartitems.Sum(x => x.Quantity * x.Price) - totalDiscount; // Tổng tiền sau khi áp dụng giảm giá
+            int totalAmount = (int)cartitems.Sum(x => x.Quantity * x.Price) - totalDiscount;
             TempData["TotalAmount"] = totalAmount;
 
             string endpoint = "https://test-payment.momo.vn/gw_payment/transactionProcessor";
@@ -216,30 +216,29 @@ namespace DoAnNhom_2.Controllers
 
         public IActionResult Error()
         {
-            // Có thể thêm logic xử lý lỗi ở đây nếu cần thiết
+       
             return View();
         }
 
         public async Task<IActionResult> ConfirmPaymentClient(Result result,string fullName, string phoneNumber, string address)
         {
-            IdentityUser user = await _userManager.GetUserAsync(User);
+            ApplicationUser user = await _userManager.GetUserAsync(User);
             var orderCode = Guid.NewGuid().ToString();
             var orderItem = new OrderModel
             {
                 Ordercode = orderCode,
                 UserName = user.UserName,
 
-                Status = 1, // Giả sử status 1 là đơn hàng mới
+                Status = 1,
                 CreatedDate = DateTime.Now
             };
 
-            // Thêm đơn hàng vào database
+        
             _dataContext.Add(orderItem);
             await _dataContext.SaveChangesAsync();
-            // Lấy thông tin giỏ hàng từ Session
+         
             List<CartItemModel> cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
 
-            // Tính tổng số lượng và tổng giá tiền của tất cả các mục OrderDetails
             int totalQuantity = cartItems.Sum(od => od.Quantity);
             decimal totalPrice = cartItems.Sum(od => od.Price * od.Quantity);
           
@@ -249,7 +248,7 @@ namespace DoAnNhom_2.Controllers
             string rOrderId = result.orderId;
             string rErrorCode = result.errorCode;
 
-            // Tạo một đối tượng MoMoPayment để lưu vào cơ sở dữ liệu
+           
             MoMoPayment payment = new MoMoPayment
             {
                 OrderId = rOrderId,
@@ -257,15 +256,15 @@ namespace DoAnNhom_2.Controllers
                 ErrorCode = rErrorCode,
                 Price = totalPrice,
                 Quantity = totalQuantity,
-                PhoneNumber = user.PhoneNumber, // Sử dụng số điện thoại từ form
+                PhoneNumber = user.PhoneNumber, 
                 OrderCode = orderCode,
                 ProductId= cartItems.Count,
-                Address = address, // Sử dụng địa chỉ từ form
+                Address = address, 
                 UserName = user.UserName,
-                // Các trường dữ liệu khác tùy thuộc vào yêu cầu của ứng dụng của bạn
+               
             };
 
-            // Thêm payment vào cơ sở dữ liệu
+          
             _dataContext.MoMoPayments.Add(payment);
             HttpContext.Session.Remove("Cart");
             await _dataContext.SaveChangesAsync();
@@ -301,12 +300,29 @@ namespace DoAnNhom_2.Controllers
             if (discountCodeEntity != null)
             {
                 decimal discountRate = discountCodeEntity.Discount;
+                decimal maxDiscountAmount = (decimal)discountCodeEntity.MaxDiscountAmount;
                 string successMessage = $"Đã áp dụng mã giảm giá {discountCode} thành công.";
 
                 foreach (var item in cartItems)
                 {
+                    
                     decimal discountAmount = item.Price * item.Quantity * discountRate;
+
+              
+                    if (discountAmount > maxDiscountAmount)
+                    {
+                        discountAmount = maxDiscountAmount;
+                    }
+
                     item.Discount = discountAmount;
+                }
+
+             
+                bool discountCodeUsed = await _discountCodeRepository.UseDiscountCodeAsync(discountCode);
+                if (!discountCodeUsed)
+                {
+                    TempData["error"] = "Không thể sử dụng lại mã giảm giá.";
+                    return RedirectToAction("Index");
                 }
 
                 HttpContext.Session.SetJson("Cart", cartItems);

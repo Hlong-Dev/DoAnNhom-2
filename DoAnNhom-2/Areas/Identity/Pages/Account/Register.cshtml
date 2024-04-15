@@ -13,6 +13,12 @@
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3">
+                <label for="fullname" class="form-label">Tên Khách Hàng</label>
+                <input asp-for="Input.Fullname" class="form-control" autocomplete="fullname" aria-required="true" />
+                <label asp-for="Input.Fullname"></label>
+                <span asp-validation-for="Input.Fullname" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
                 <label for="username" class="form-label">Tên Tài Khoản</label>
                 <input type="username" class="form-control" id="username" asp-for="Input.UserName" aria-describedby="emailHelp" autocomplete="username" required>
                 <span asp-validation-for="Input.UserName" class="text-danger"></span>
@@ -31,6 +37,12 @@
                 <label for="confirmPassword" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="confirmPassword" asp-for="Input.ConfirmPassword" autocomplete="new-password" required>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+              @*   <div class="form-floating">
+                    <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-control">
+                        <option disable selected> Select Role</option>
+                    </select>
+                </div> *@
+             
             </div>
             <button id="registerSubmit" type="submit" class="btn btn-primary w-100">Register</button>
         </form>
