@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oepkFzJSKyWpLLMu3hUvSGkbHipl4SlwGYVN/UIQ9Wo=",
+  "Hash": "OR9K1Kag8dl+E9vCHWqIf1IXBhfqPoxNhxxMP90TIC8=",
   "Source": "DoAnNhom-2",
   "BasePath": "_content/DoAnNhom-2",
   "Mode": "Default",
@@ -35598,6 +35598,23 @@
       "OriginalItemSpec": "wwwroot\\media\\products\\39455f04-eaf8-4c20-94de-54fc982dcc74_tv5.png"
     },
     {
+      "Identity": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\3a2fd1e7-096e-4cb8-82b1-bbc8bdad8e38_5__2_-removebg-preview (1).png",
+      "SourceId": "DoAnNhom-2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\",
+      "BasePath": "_content/DoAnNhom-2",
+      "RelativePath": "media/products/3a2fd1e7-096e-4cb8-82b1-bbc8bdad8e38_5__2_-removebg-preview (1).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\products\\3a2fd1e7-096e-4cb8-82b1-bbc8bdad8e38_5__2_-removebg-preview (1).png"
+    },
+    {
       "Identity": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\4532a8f2-40d6-46ea-9198-81b056d6fca9_tv12.png",
       "SourceId": "DoAnNhom-2",
       "SourceType": "Discovered",
@@ -35749,6 +35766,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\products\\5fa872b2-e8c7-4926-915a-4985d86c6218_tv5.png"
+    },
+    {
+      "Identity": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\64074901-ad17-4de5-b319-ccaa44f172d9_a1.png",
+      "SourceId": "DoAnNhom-2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\",
+      "BasePath": "_content/DoAnNhom-2",
+      "RelativePath": "media/products/64074901-ad17-4de5-b319-ccaa44f172d9_a1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\products\\64074901-ad17-4de5-b319-ccaa44f172d9_a1.png"
     },
     {
       "Identity": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\666084d8-dafd-4af4-8f02-d0c79ebb594b_tv12.png",

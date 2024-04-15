@@ -35,6 +35,23 @@ namespace DoAnNhom_2.Controllers
 
             return View(products);
         }
+        [Route("san-pham-giam-gia")]
+        public IActionResult Index2(int? page)
+        {
+
+            int pageNumber = page ?? 1; // Số trang hiện tại, nếu không có thì mặc định là 1
+            int pageSize = 9;
+
+            var products = _dataContext.Products
+                                         .OrderByDescending(p => p.Slug)
+                                         .Include(p => p.Category)
+                                         .Include(p => p.Brand)
+                                         .Where(p => p.IsDeleted == false && p.OldPrice > 0)
+                                         .Take(8)
+                                         .ToPagedList(pageNumber, pageSize);
+            ;
+            return View(products);
+        }
         [Route("san-pham/sap-xep-gia-{sortOrder}")]
         public IActionResult SortByPrice(string sortOrder, int? page)
         {
@@ -42,7 +59,7 @@ namespace DoAnNhom_2.Controllers
             ViewData["PriceAscSort"] = sortOrder == "price_asc" ? "price_desc" : "price_asc";
 
             int pageNumber = page ?? 1; // Số trang hiện tại, nếu không có thì mặc định là 1
-            int pageSize = 3; // Số sản phẩm trên mỗi trang
+            int pageSize = 9  ; // Số sản phẩm trên mỗi trang
 
             IQueryable<ProductModel> products = _dataContext.Products
                 .Include(p => p.Category)

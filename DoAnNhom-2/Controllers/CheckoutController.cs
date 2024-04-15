@@ -2,6 +2,7 @@
 using DoAnNhom_2.Models;
 using DoAnNhom_2.Repository;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,13 @@ namespace DoAnNhom_2.Controllers
     {
         private readonly ApplicationDbContext _datacontext;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IEmailSender _emailSender;
 
-        public CheckoutController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public CheckoutController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, IEmailSender emailSender)
         {
             _datacontext = context;
             _userManager = userManager;
+            _emailSender = emailSender;
         }
 
         public async Task<IActionResult> Checkout(string fullName, string phoneNumber, string address, string note)
@@ -78,6 +81,14 @@ namespace DoAnNhom_2.Controllers
 
                 // Lưu các thay đổi vào database
                 await _datacontext.SaveChangesAsync();
+                // Gửi email thông báo đặt hàng thành công
+                // Gửi email thông báo đặt hàng thành công
+                // Gửi email thông báo đặt hàng thành công
+                string subject = "Đặt Hàng Thành Công";
+                string message = $"Đơn hàng của bạn đã được nhận và đang được xử lý.\n\nThông tin đơn hàng:\n- Mã đơn hàng: {orderCode}\n- Số tiền đơn hàng: {totalPrice.ToString("C")}\n- Họ và tên: {fullName}\n- Số điện thoại: {phoneNumber}\n- Địa chỉ: {address}\n- Ghi chú: {note}";
+
+                await _emailSender.SendEmailAsync(user.Email, subject, message);
+
 
                 // Chuyển hướng đến trang xác nhận thanh toán
                 return RedirectToAction("ConfirmPaymentClient", "Cart");
@@ -85,3 +96,4 @@ namespace DoAnNhom_2.Controllers
         }
     }
 }
+    

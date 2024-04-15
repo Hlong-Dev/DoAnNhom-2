@@ -140,10 +140,11 @@
                                 <a asp-area="" asp-controller="Product" asp-action="Index" class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">Sản Phẩm</a>
                                 <ul class="dropdown-menu" id="productDropdown">
                                     <li>
-                                        <a asp-area="" asp-controller="Product" asp-action="Index" class="dropdown-item">Tivi Cũ</a>
+                                        <a asp-area="" asp-controller="Product" asp-action="Index" class="dropdown-item">Sản Phẩm mới nhất</a>
                                     </li>
                                     <li>
-                                        <a href="https://localhost:7261/Product/index" class="dropdown-item">Tivi Mới</a>
+                                       @*  <a href="https://localhost:7261/Product/index" class="dropdown-item"></a> *@
+                                        <a asp-area="" asp-controller="Product" asp-action="Index2" class="dropdown-item">sản phẩm giảm giá</a>
                                     </li>
                                 </ul>
                             </li>

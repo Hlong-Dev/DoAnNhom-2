@@ -31,8 +31,12 @@
                 <td>
                     <!-- Thêm nút sửa -->
                     <a asp-action="Edit" asp-route-id="@user.Id">Edit</a> |
-                    <!-- Thêm nút xóa -->
-                    <a asp-action="Delete" asp-route-id="@user.Id">Delete</a>
+                    @if (User.IsInRole(SD.Role_Admin))
+                    {
+                        <form asp-action="Lockout" asp-route-id="@user.Id" method="post">
+                            <button type="submit" class="btn btn-danger">Khóa tài khoản</button>
+                        </form>
+                    }
                 </td>
             </tr>
         }
