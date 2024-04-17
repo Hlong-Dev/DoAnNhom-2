@@ -8877,10 +8877,6 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\04dab78d-e038-4169-a478-3fd0bdfa23b3_a1.png",
-      "PackagePath": "staticwebassets\\media\\products\\04dab78d-e038-4169-a478-3fd0bdfa23b3_a1.png"
-    },
-    {
       "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\0616cd6f-98c1-4d02-9cbe-09081d624fde_tv31.png",
       "PackagePath": "staticwebassets\\media\\products\\0616cd6f-98c1-4d02-9cbe-09081d624fde_tv31.png"
     },
@@ -9143,6 +9139,10 @@
     {
       "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\fbbb77e5-b177-4f6b-a03b-88bbc4b4129f_a1.png",
       "PackagePath": "staticwebassets\\media\\products\\fbbb77e5-b177-4f6b-a03b-88bbc4b4129f_a1.png"
+    },
+    {
+      "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\media\\products\\tv10.png",
+      "PackagePath": "staticwebassets\\media\\products\\tv10.png"
     },
     {
       "Id": "C:\\Users\\hlongday\\source\\repos\\DoAnNhom-2\\DoAnNhom-2\\wwwroot\\style.css",

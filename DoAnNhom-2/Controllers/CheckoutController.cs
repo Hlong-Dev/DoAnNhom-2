@@ -48,6 +48,7 @@ namespace DoAnNhom_2.Controllers
                 var orderCode = Guid.NewGuid().ToString();
                 var orderItem = new OrderModel
                 {
+                    FullName = fullName,
                     Ordercode = orderCode,
                     UserName = user.UserName,
                     Status = 1,

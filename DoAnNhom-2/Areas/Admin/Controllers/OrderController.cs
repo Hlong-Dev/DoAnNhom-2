@@ -88,78 +88,76 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
 
                     for (int row = 2; row <= rowCount; row++)
                     {
-                        var productName = worksheet.Cells[row, 1].Value.ToString().Trim();
-                        var categoryId = int.Parse(worksheet.Cells[row, 2].Value.ToString());
-                        var brandId = int.Parse(worksheet.Cells[row, 3].Value.ToString());
-                        var price = decimal.Parse(worksheet.Cells[row, 4].Value.ToString());
-                        var Description = worksheet.Cells[row, 5].Value.ToString();
-
-                        // Tạo đối tượng ProductModel từ dữ liệu tệp Excel
-                        var product = new ProductModel
+                        var FullName = worksheet.Cells[row, 1].Value.ToString().Trim(); // Lấy giá trị từ ô thứ nhất
+                        var Username = worksheet.Cells[row, 2].Value.ToString().Trim(); // Lấy giá trị từ ô thứ hai
+                        var CreateDate = DateTime.Parse(worksheet.Cells[row, 3].Value.ToString());
+                        var Status = int.Parse(worksheet.Cells[row, 4].Value.ToString());
+                        var Ordercode = Guid.NewGuid().ToString();
+                        // Tạo đối tượng Order từ dữ liệu tệp Excel
+                        var order = new OrderModel
                         {
-                            Name = productName,
-                            CategoryId = categoryId,
-                            BrandId = brandId,
-                            Price = price,
-                            IsDeleted = false, // Bạn có thể thay đổi giá trị này tùy theo yêu cầu của mình
-                            Description = Description,
+                            FullName = FullName,
+                            UserName = Username,
+                            CreatedDate = CreateDate,
+                            Status = Status,
+                            Ordercode = Ordercode,
                         };
 
-                        // Thêm sản phẩm vào cơ sở dữ liệu
-                        _dataContext.Add(product);
+                        // Thêm đơn hàng vào cơ sở dữ liệu
+                        _dataContext.Orders.Add(order);
                     }
 
                     await _dataContext.SaveChangesAsync();
                 }
             }
 
-            TempData["success"] = "Nhập sản phẩm từ tệp Excel thành công.";
-            return RedirectToAction("Index");
+            TempData["success"] = "Nhập đơn hàng từ tệp Excel thành công.";
+            return RedirectToAction("Index", "Order", new { area = "Admin" });
         }
+
+
 
         [Authorize(Roles = SD.Role_Admin)]
         public async Task<IActionResult> Export()
         {
-            var products = await _dataContext.Products.ToListAsync();
+            var orders = await _dataContext.Orders.ToListAsync();
 
             using (var package = new ExcelPackage())
             {
-                var worksheet = package.Workbook.Worksheets.Add("Sản phẩm");
+                var worksheet = package.Workbook.Worksheets.Add("Đơn hàng");
 
                 // Thiết lập tiêu đề cho các cột
-                worksheet.Cells[1, 1].Value = "Tên Sản phẩm";
-                worksheet.Cells[1, 2].Value = "Số Lượng";
-                worksheet.Cells[1, 3].Value = "Giá Cũ";
-                worksheet.Cells[1, 4].Value = "Giá";
-                worksheet.Cells[1, 5].Value = "Kích Thước";
+                worksheet.Cells[1, 1].Value = "Id";
+                worksheet.Cells[1, 2].Value = "Tên Khách Hàng";
+                worksheet.Cells[1, 3].Value = "OrderCode";
+                worksheet.Cells[1, 4].Value = "Ngày Tạo";
+                worksheet.Cells[1, 5].Value = "Trạng thái đơn hàng";
 
-                worksheet.Cells[1, 6].Value = "Thương Hiệu";
-                // Ghi dữ liệu sản phẩm vào tệp Excel
                 int row = 2;
-                foreach (var product in products)
+                foreach (var order in orders)
                 {
-                    worksheet.Cells[row, 1].Value = product.Name;
-                    worksheet.Cells[row, 2].Value = product.Quantity;
-                    worksheet.Cells[row, 3].Value = product.OldPrice;
-                    worksheet.Cells[row, 4].Value = product.Price;
-                    worksheet.Cells[row, 5].Value = product.Size;
-                    worksheet.Cells[row, 5].Value = product.BrandId;
+                    worksheet.Cells[row, 1].Value = order.Id;
+                    worksheet.Cells[row, 2].Value = order.UserName;
+                    worksheet.Cells[row, 3].Value = order.Ordercode;
+                    worksheet.Cells[row, 4].Value = order.CreatedDate;
+                    worksheet.Cells[row, 5].Value = order.Status;
 
                     row++;
                 }
 
                 // Thiết lập kiểu dáng cho bảng
-                worksheet.Cells["A1:D1"].Style.Font.Bold = true;
-                worksheet.Cells["A1:D1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                worksheet.Cells["A1:D1"].Style.Fill.BackgroundColor.SetColor(Color.LightGray);
+                worksheet.Cells["A1:E1"].Style.Font.Bold = true;
+                worksheet.Cells["A1:E1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                worksheet.Cells["A1:E1"].Style.Fill.BackgroundColor.SetColor(Color.LightGray);
 
                 // AutoFit cột
                 worksheet.Cells.AutoFitColumns();
 
                 // Xuất tệp Excel
-                return File(package.GetAsByteArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "products.xlsx");
+                return File(package.GetAsByteArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "orders.xlsx");
             }
         }
+
 
 
     }

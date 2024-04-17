@@ -4,7 +4,7 @@
 <div style="height: 80px;"></div>
 <div>
     <h4>Import Sản Phẩm từ File Excel</h4>
-    <form asp-action="Import" asp-controller="Product" method="post" enctype="multipart/form-data">
+    <form asp-action="Import" asp-controller="Order" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="fileInput">Chọn Tệp Excel:</label>
             <input type="file" class="form-control-file" id="fileInput" name="file">
@@ -15,7 +15,7 @@
 
 <div style="margin-top: 20px;">
     <h4>Export Sản Phẩm sang File Excel</h4>
-    <a asp-action="Export" asp-controller="Product" class="btn btn-success">Export</a>
+    <a asp-action="Export" asp-controller="Order" class="btn btn-success">Export</a>
 </div>
 <table class="table">
     <thead>
@@ -34,7 +34,7 @@
             <tr>
                 <th scope="row">@item.Id</th>
                 <td>@item.Ordercode</td>
-                <td>@item.UserName</td>
+                <td>@item.FullName</td>
                 <td>@item.CreatedDate</td>
                 <td>
                     @if (item.Status == 1)

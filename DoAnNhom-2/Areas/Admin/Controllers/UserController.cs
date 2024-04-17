@@ -142,7 +142,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var result = await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.MaxValue); 
+            var result = await _userManager.SetLockoutEndDateAsync(user, DateTimeOffset.Now.AddMinutes(30));
 
             if (result.Succeeded)
             {
@@ -161,6 +161,35 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
             return View();
         }
 
+        [Authorize(Roles = SD.Role_Admin)]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Unlock(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var result = await _userManager.SetLockoutEndDateAsync(user, null); 
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction(nameof(UnlockSuccess));
+            }
+            else
+            {
+                ModelState.AddModelError("", "Mở khóa tài khoản không thành công.");
+                return RedirectToAction(nameof(Index));
+            }
+        }
+
+        [Authorize(Roles = SD.Role_Admin)]
+        public IActionResult UnlockSuccess()
+        {
+            return View();
+        }
 
         [HttpPost]
 

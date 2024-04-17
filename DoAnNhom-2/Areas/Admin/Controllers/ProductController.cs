@@ -14,6 +14,7 @@ using DoAnNhom_2.Data;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.Drawing;
+using Microsoft.Extensions.Hosting.Internal;
 
 
 namespace DoAnNhom_2.Areas.Admin.Controllers
@@ -247,7 +248,8 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
                         var brandId = int.Parse(worksheet.Cells[row, 3].Value.ToString());
                         var price = decimal.Parse(worksheet.Cells[row, 4].Value.ToString());
                         var Description = worksheet.Cells[row, 5].Value.ToString();
-                        
+                        var Slug = worksheet.Cells[row, 6].Value.ToString();
+                        var imageUrl = worksheet.Cells[row, 7].Value.ToString();
                         // Tạo đối tượng ProductModel từ dữ liệu tệp Excel
                         var product = new ProductModel
                         {
@@ -255,11 +257,21 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
                             CategoryId = categoryId,
                             BrandId = brandId,
                             Price = price,
-                            IsDeleted = false, // Bạn có thể thay đổi giá trị này tùy theo yêu cầu của mình
+                            IsDeleted = false, 
                             Description = Description,
+                            Slug = Slug,
+                            Image = Path.GetFileName(imageUrl)
                         };
+                        if (product.ImageUpload != null)
+                        {
+                            var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
+                            var uniqueFileName = Guid.NewGuid().ToString() + "_" + product.Image;
+                            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                            await product.ImageUpload.CopyToAsync(new FileStream(filePath, FileMode.Create));
+                        }
 
-                        // Thêm sản phẩm vào cơ sở dữ liệu
+
+                        
                         _dataContext.Add(product);
                     }
 
@@ -270,6 +282,7 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
             TempData["success"] = "Nhập sản phẩm từ tệp Excel thành công.";
             return RedirectToAction("Index");
         }
+
 
         [Authorize(Roles = SD.Role_Admin)]
         public async Task<IActionResult> Export()
