@@ -92,7 +92,6 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
 
             return View(viewModel);
         }
-
         [Authorize(Roles = SD.Role_Admin)]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -106,21 +105,20 @@ namespace DoAnNhom_2.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
+                // Cập nhật thông tin người dùng
                 user.UserName = model.User.UserName;
                 user.Email = model.User.Email;
                 var result = await _userManager.UpdateAsync(user);
 
                 if (result.Succeeded)
                 {
-                    if (User.IsInRole(SD.Role_Admin))
-                    {
-                        var userRoles = await _userManager.GetRolesAsync(user);
-                        await _userManager.RemoveFromRolesAsync(user, userRoles.ToArray());
+                    // Cập nhật vai trò
+                    var userRoles = await _userManager.GetRolesAsync(user);
+                    await _userManager.RemoveFromRolesAsync(user, userRoles.ToArray());
 
-                        if (model.SelectedRoles != null && model.SelectedRoles.Any())
-                        {
-                            await _userManager.AddToRolesAsync(user, model.SelectedRoles);
-                        }
+                    if (model.SelectedRoles != null && model.SelectedRoles.Any())
+                    {
+                        await _userManager.AddToRolesAsync(user, model.SelectedRoles);
                     }
                     return RedirectToAction(nameof(Index));
                 }

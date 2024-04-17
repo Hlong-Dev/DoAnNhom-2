@@ -27,6 +27,10 @@
                         <td>@order.Address</td>
                         <td>@order.PhoneNumber</td>
                     </tr>
+                <td>
+                    <a asp-action="View" class="btn btn-warning btn-sm" asp-controller="Order" asp-route-Id="@order.Id">Sửa đơn hàng</a>
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-controller="Order" asp-route-Id="@order.Id">Hủy đơn hàng</a>
+                </td>
                 }
             </tbody>
         </table>

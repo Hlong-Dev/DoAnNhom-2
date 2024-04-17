@@ -13,7 +13,7 @@ namespace DoAnNhom_2.Models
        
         public string Slug { get; set; }
         [Required, MinLength(4, ErrorMessage = "Yeu cau nhap mo ta danh muc")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
         [Required(ErrorMessage = "yeu cau nhap gia san pham")]
        
         public decimal Price { get; set; }

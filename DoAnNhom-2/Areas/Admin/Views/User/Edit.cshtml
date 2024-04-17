@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
+<div style="height: 80px;"></div>
 <h1>Edit User</h1>
 <div style="height: 180px;"></div>
 <form asp-action="Edit" method="post">
@@ -13,29 +13,27 @@
 
     <div class="form-group">
         <label asp-for="User.UserName" class="control-label"></label>
-     @*    <input asp-for="User.UserName" class="form-control" /> *@
+        <input asp-for="User.UserName" class="form-control" />
         <span asp-validation-for="User.UserName" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="User.Email" class="control-label"></label>
-    @*     <input asp-for="User.Email" class="form-control" /> *@
+        <input asp-for="User.Email" class="form-control" />
         <span asp-validation-for="User.Email" class="text-danger"></span>
     </div>
 
-    @if (User.IsInRole("Admin"))
-    {
-        <div class="form-group">
-            <label class="control-label">Roles</label>
-            <select asp-for="SelectedRoles" class="form-control" multiple>
-                @foreach (var role in Model.Roles)
-                {
-                    <option value="@role.Value" selected="@Model.UserRoles.Contains(role.Value)">@role.Text</option>
-                }
-            </select>
-            <span asp-validation-for="SelectedRoles" class="text-danger"></span>
-        </div>
-    }
+    <div class="form-group">
+        <label class="control-label">Roles</label>
+        <select asp-for="SelectedRoles" name="SelectedRoles[]" class="form-control" multiple>
+            @foreach (var role in Model.Roles)
+            {
+                <option value="@role.Value" selected="@Model.UserRoles.Contains(role.Value)">@role.Text</option>
+            }
+        </select>
+
+        <span asp-validation-for="SelectedRoles" class="text-danger"></span>
+    </div>
 
     <div class="form-group">
         <button type="button" class="btn btn-primary" onclick="sendForgotPasswordEmail('@Model.User.Id')">Send Forgot Password Email</button>
@@ -56,8 +54,9 @@
                 success: function () {
                     alert("Forgot password email sent successfully.");
                 },
-                error: function () {
-                    alert("Error sending forgot password email.");
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log(xhr.responseText);
+                    alert("Error sending forgot password email: " + xhr.responseText);
                 }
             });
         }
