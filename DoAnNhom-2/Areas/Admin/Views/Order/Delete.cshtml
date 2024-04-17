@@ -1,0 +1,48 @@
+﻿@model DoAnNhom_2.Models.OrderDetails
+<div style="height: 80px;"></div>
+<h2>Xóa Đơn Hàng</h2>
+
+<h3>Bạn có chắc chắn muốn xóa đơn hàng này không?</h3>
+<div>
+    <h4>Thông tin Đơn Hàng</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Mã Đơn Hàng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            Người Dùng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class="col-sm-2">
+            Ngày Đặt Hàng
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <!-- Thêm các thuộc tính khác của đơn hàng vào đây nếu cần -->
+    </dl>
+
+    <form id="deleteForm" asp-action="DeleteConfirmed" asp-route-id="@Model.Id" method="post">
+        <div class="form-group">
+            <input type="submit" value="Xóa" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+        </div>
+    </form>
+
+</div>
+
+<script>
+    // Xác nhận trước khi xóa
+    document.getElementById("deleteForm").addEventListener("submit", function (event) {
+        var confirmation = confirm("Bạn có chắc chắn muốn xóa đơn hàng này không?");
+        if (!confirmation) {
+            event.preventDefault(); // Ngăn chặn gửi yêu cầu xóa nếu không được xác nhận
+        }
+    });
+</script>

@@ -360,6 +360,9 @@ namespace DoAnNhom_2.Data.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Ordercode")
                         .HasColumnType("nvarchar(max)");
 

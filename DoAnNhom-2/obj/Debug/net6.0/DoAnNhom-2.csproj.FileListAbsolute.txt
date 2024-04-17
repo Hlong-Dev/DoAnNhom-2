@@ -296,3 +296,7 @@ C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\System.Sec
 C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
 C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\EPPlus.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\EPPlus.Interfaces.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+C:\Users\hlongday\source\repos\DoAnNhom-2\DoAnNhom-2\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll

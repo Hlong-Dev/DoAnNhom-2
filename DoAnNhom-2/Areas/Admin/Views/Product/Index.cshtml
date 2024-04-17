@@ -4,6 +4,35 @@
 }
 
 <div style="height: 100px;"></div>
+<div>
+    <h4>Import Sản Phẩm từ File Excel</h4>
+    <form asp-action="Import" asp-controller="Product" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="fileInput">Chọn Tệp Excel:</label>
+            <input type="file" class="form-control-file" id="fileInput" name="file">
+        </div>
+        <button type="submit" class="btn btn-primary">Import</button>
+    </form>
+</div>
+
+<div style="margin-top: 20px;">
+    <h4>Export Sản Phẩm sang File Excel</h4>
+    <a asp-action="Export" asp-controller="Product" class="btn btn-success">Export</a>
+</div>
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["success"]
+    </div>
+}
+
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["error"]
+    </div>
+}
 <a asp-action="Create" class="btn btn-success btn-sm" asp-controller="Product">Thêm Sản Phẩm</a>
 <table class="table">
     <thead>

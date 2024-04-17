@@ -1,51 +1,57 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    ViewData["Title"] = "Don Hang";
+﻿@{
+    ViewData["Title"] = "Đơn Hàng";
 }
+<div style="height: 80px;"></div>
+<div>
+    <h4>Import Sản Phẩm từ File Excel</h4>
+    <form asp-action="Import" asp-controller="Order" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="fileInput">Chọn Tệp Excel:</label>
+            <input type="file" class="form-control-file" id="fileInput" name="file">
+        </div>
+        <button type="submit" class="btn btn-primary">Import</button>
+    </form>
+</div>
+
+<div style="margin-top: 20px;">
+    <h4>Export Sản Phẩm sang File Excel</h4>
+    <a asp-action="Export" asp-controller="Order" class="btn btn-success">Export</a>
+</div>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Order code</th>
-            <th scope="col">UserName</th>
-
-            <th scope="col">Order Date</th>
-            <th scope="col">Order Status</th>
+            <th scope="col">Mã Đơn Hàng</th>
+            <th scope="col">Người Dùng</th>
+            <th scope="col">Ngày Đặt Hàng</th>
+            <th scope="col">Trạng Thái Đơn Hàng</th>
+            <th scope="col">Thao Tác</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
-                <th scope="row">@item.Ordercode</th>
-                <td>@item.UserName</td>
+                <th scope="row">@item.Id</th>
+                <td>@item.Ordercode</td>
+                <td>@item.FullName</td>
                 <td>@item.CreatedDate</td>
-                
                 <td>
                     @if (item.Status == 1)
                     {
-                        <span> class="text text-success">don hang moi</span>
+                        <span class="text-success">Đơn hàng mới</span>
                     }
                     else
                     {
-                        <span> class="text text-danger">Don hang thanh cong</span>
-
+                        <span class="text-danger">Đơn hàng thành công</span>
                     }
-
                 </td>
-
-
                 <td>
                     <a asp-action="View" class="btn btn-warning btn-sm" asp-controller="Order" asp-route-Id="@item.Ordercode">Sửa</a>
-                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-controller="Category" asp-route-Id="@item.Id">Xóa</a>
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-controller="Order" asp-route-Id="@item.Id">Xóa</a>
                 </td>
-
             </tr>
         }
-
-
     </tbody>
 </table>
 <h2>Tổng số đơn hàng: @ViewBag.TotalOrders</h2>

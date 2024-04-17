@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OfficeOpenXml;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddSession(options =>
